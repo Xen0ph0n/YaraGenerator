@@ -1,20 +1,20 @@
 ## Information
-This is a simple tool to try to allow for quick, simple, and effective yara rule creation to isolate malware families. This is an experiement and thus far I've had pretty good success with it. It is a work in progess and I welcome forks and feedback! 
+This is a simple tool to try to allow for quick, simple, and effective yara rule creation to isolate malware families. This is an experiment and thus far I've had pretty good success with it. It is a work in progress and I welcome forks and feedback!
 
-To utilize this you must find a few files from a malware family you wish to profile, (the more the better, three to four samples seems to be effective). Place the samples in their own directory, and run the tool. Thats it! Yara Magic! Please note however that this tool will only be as precise as you are in chosing what you are looking for...
+To utilize this you must find a few files from a malware family you wish to profile, (the more the better, three to four samples seems to be effective). Place the samples in their own directory, and run the tool. Thats it! Yara Magic! Please note however that this tool will only be as precise as you are in choosing what you are looking for...
 
 The theory behind the tool is as follows:
 
 
-   As opposed to intensive analytical examination of a cadre of malware to determine similarites, by extracting all present strings and ensuring only to signature for those present in all desired samples and requiring ENOUGH of them to be present to equal a match, similar results can be achieved. 
+   As opposed to intensive analytical examination of a cadre of malware to determine similarities, by extracting all present strings and ensuring only to signature for those present in all desired samples and requiring ENOUGH of them to be present to equal a match, similar results can be achieved.
 
-   In many ways this is less flexible than the existing methodology, but in some ways more so, as it relies less on anomoylous indicators which can eaisly be changed. That said it needs a lot of work and tuning, because the risk is run of capturing strings only present in your sample set, but not the family at large. Lowering the critical hit from 100% of strings may approach a usable compromise there.
+   In many ways this is less flexible than the existing methodology, but in some ways more so, as it relies less on anomalous indicators which can easily be changed. That said it needs a lot of work and tuning, because the risk is run of capturing strings only present in your sample set, but not the family at large. Lowering the critical hit from 100% of strings may approach a usable compromise there.
 
-   In the future I will create a list of thousands of strings we never want to signature for and remove them from potentials for the rules. 
+   In the future I will create a list of thousands of strings we never want to signature for and remove them from potentials for the rules.
 
    Current hard set variables are 30 random strings selected from those present in all binary samples of six or more printable chars.
 
-## Author & Licence
+## Author & License
 
 YaraGenerator is copyrighted by Chris Clark 2013. Contact me at Chris@xenosys.org
 
@@ -168,7 +168,7 @@ condition:
 
 PipeDream:
 <pre>
-100% Hits on Samples: 
+100% Hits on Samples:
 
 $ yara -r Trojan_Win_PipeDream.yar pipedream/
 Trojan_Win_PipeDream pipedream//VTDL50B136889962D0CBDB4F7BD460D7CD29.danger
@@ -225,3 +225,6 @@ Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//f76dd93b10fc173eaf901ff1fb
 $ yara -r Trojan_Win_GreenCat.yar ../../CleanFiles/
 
 </pre>
+
+
+
