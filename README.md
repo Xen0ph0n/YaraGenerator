@@ -3,7 +3,9 @@ This is a simple tool to try to allow for quick, simple, and effective yara rule
 
 To utilize this you must find a few files from a malware family you wish to profile, (the more the better, three to four samples seems to be effective). Place the samples in their own directory, and run the tool. Thats it! Yara Magic! Please note however that this tool will only be as precise as you are in chosing what you are looking for...
 
-The theory behind the tool is this:
+The theory behind the tool is as follows:
+
+
    As opposed to intensive analytical examination of a cadre of malware to determine similarites, by extracting all present strings and ensuring only to signature for those present in all desired samples and requiring ENOUGH of them to be present to equal a match, similar results can be achieved. 
 
    In many ways this is less flexible than the existing methodology, but in some ways more so, as it relies less on anomoylous indicators which can eaisly be changed. That said it needs a lot of work and tuning, because the risk is run of capturing strings only present in your sample set, but not the family at large. Lowering the critical hit from 100% of strings may approach a usable compromise there.
@@ -22,9 +24,10 @@ YaraGenerator is distributed in the hope that it will be useful, but WITHOUT ANY
 You should have received a copy of the GNU General Public License along with YaraGenerator. If not, see http://www.gnu.org/licenses/.
 
 ## Example
-<pre>
+
 Usage is as follows with an example of a basic search +  hitting all of
 the switches below:
+<pre>
 
 usage: yaraGenerator.py [-h] -r RULENAME [-a AUTHOR] [-d DESCRIPTION]
                         InputDirectory
@@ -39,9 +42,11 @@ optional arguments:
   -r RULENAME         Enter A Rule/Alert Name (No Spaces + Must Start with Letter)
   -a AUTHOR           Enter Author Name
   -d DESCRIPTION      Provide a useful description of the Yara Rule
+</pre>
 
 Example Usage To Build Two Rules from 3-4 Samples:
 
+<pre>
 python yaraGenerator.py pipedream/ -r Trojan_Win_PipeDream -d "I Have Recently found this backdoor present in various customer environments, it has an interesting beacon containing many |'s thus the name" -a "Chris Clark Chris@xenosec.org"
 
 [+] Yara Rule Generated: Trojan_Win_PipeDream.yar
@@ -51,7 +56,11 @@ python yaraGenerator.py pipedream/ -r Trojan_Win_PipeDream -d "I Have Recently f
   [+] Rule Description: I Have Recently found this backdoor present in various customer environments, it has an interesting beacon containing many |'s thus the name
 
 [+] YaraGenerator (C) 2013 Chris@xenosec.org https://github.com/Xen0ph0n/YaraGenerator
+</pre>
 
+Another Example for a Specific Family of APT1 Malware:
+
+<pre>
 python yaraGenerator.py greencat/ -r Trojan_Win_GreenCat -d "This is a test to find the GreenCat Trojan from APT1 (Comment Panda)" -a "Chris Clark Chris@xenosec.org"
 
 [+] Yara Rule Generated: Trojan_Win_GreenCat.yar
@@ -61,9 +70,10 @@ python yaraGenerator.py greencat/ -r Trojan_Win_GreenCat -d "This is a test to f
   [+] Rule Description: This is a test to find the GreenCat Trojan from APT1 (Comment Panda)
 
 [+] YaraGenerator (C) 2013 Chris@xenosec.org https://github.com/Xen0ph0n/YaraGenerator
-
+</pre>
 Resulting Yara Rules:
-
+<pre>
+rule Trojan_Win_GreenCat
 {
 meta:
       author = "Chris Clark Chris@xenosec.org"
@@ -106,8 +116,8 @@ strings:
 condition:
       all of them
 }
-
-
+</pre>
+<pre>
 rule Trojan_Win_PipeDream
 {
 meta:
@@ -155,10 +165,9 @@ condition:
 
 ## Results
 
-<pre>
 
 PipeDream:
-
+<pre>
 100% Hits on Samples: 
 
 $ yara -r Trojan_Win_PipeDream.yar pipedream/
@@ -174,10 +183,11 @@ $ yara -r Trojan_Win_PipeDream.yar ../../MalwareSamples/
 $ yara -r Trojan_Win_PipeDream.yar ../../CleanFiles/
 
 100% Success Hunting On Virus Total
-
+</pre>
 
 GreenCat Rule:
 
+<pre>
 100% Hits on Test Samples:
 
 $ yara -r Trojan_Win_GreenCat.yar greencat/
