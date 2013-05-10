@@ -17,10 +17,10 @@ def getStrings(filename):
     if len(strlist) > 0:
       return list(set(strlist))
     else:
-      print '[-] No Extractable Attributes Present in: '+ filename
+      print '[!] No Extractable Attributes Present in: '+ filename + "\n[!] Please Remove it from the Sample Set and Try Again"
       sys.exit(1) 
   except Exception:
-    print '[-] No Extractable Attributes Present in: '+ filename
+    print '[!] No Extractable Attributes Present in: '+ filename + "\n[!] Please Remove it from the Sample Set and Try Again"
     sys.exit(1)
 
 def md5sum(filename):
@@ -54,7 +54,7 @@ def buildYara(options, strings, hashes):
     for i in range(1,30):
   	 randStrings.append(random.choice(strings))
   except IndexError:
-    print '[-] No Common Attributes Found For All Samples, Please Be More Selective'
+    print '[!] No Common Attributes Found For All Samples, Please Be More Selective'
     sys.exit(1)
 
   randStrings = list(set(randStrings))
@@ -89,11 +89,11 @@ def main():
     sys.exit(1)
   options = opt.parse_args()
   if " " in options.RuleName or not options.RuleName[0].isalpha():
-  	print "[-] Rule Name Can Not Contain Spaces or Begin With A Non Alpha Character"
+  	print "[!] Rule Name Can Not Contain Spaces or Begin With A Non Alpha Character"
   workingdir = options.InputDirectory
   fileDict = {}
   hashList = []
-
+  print "\n[+] Generating Yara Rule " + options.RuleName + " from files located in: " + options.InputDirectory 
   #get hashes and strings 
   for f in os.listdir(workingdir):
     if os.path.isfile(workingdir + f) and not f.startswith("."):
