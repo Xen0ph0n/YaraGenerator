@@ -49,6 +49,8 @@ Example Usage To Build Two Rules from 3-4 Samples:
 <pre>
 python yaraGenerator.py pipedream/ -r Trojan_Win_PipeDream -d "I Have Recently found this backdoor present in various customer environments, it has an interesting beacon containing many |'s thus the name" -a "Chris Clark Chris@xenosec.org"
 
+[+] Generating Yara Rule Trojan_Win_PipeDream from files located in: pipedream/
+
 [+] Yara Rule Generated: Trojan_Win_PipeDream.yar
 
   [+] Files Examined: ['50b136889962d0cbdb4f7bd460d7cd29', '79dce17498e1997264346b162b09bde8', '92ee1fb5df21d8cfafa2b02b6a25bd3b', 'a669c0da6309a930af16381b18ba2f9d']
@@ -62,6 +64,8 @@ Another Example for a Specific Family of APT1 Malware:
 
 <pre>
 python yaraGenerator.py greencat/ -r Trojan_Win_GreenCat -d "This is a test to find the GreenCat Trojan from APT1 (Comment Panda)" -a "Chris Clark Chris@xenosec.org"
+
+[+] Generating Yara Rule Trojan_Win_GreenCat from files located in: greencat/
 
 [+] Yara Rule Generated: Trojan_Win_GreenCat.yar
 
