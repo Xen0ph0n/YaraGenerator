@@ -14,9 +14,14 @@ def getStrings(filename):
     regexp = '[%s]{%d,}' % (chars, 6)
     pattern = re.compile(regexp)
     strlist = pattern.findall(data)
-    return list(set(strlist))
+    if len(strlist) > 0:
+      return list(set(strlist))
+    else:
+      print '[-] No Extractable Attributes Present in: '+ filename
+      sys.exit(1) 
   except Exception:
-    print '[-] No Extractable Strings Present in: '+ filename
+    print '[-] No Extractable Attributes Present in: '+ filename
+    sys.exit(1)
 
 def md5sum(filename):
   fh = open(filename, 'rb')
@@ -51,7 +56,7 @@ def buildYara(options, strings, hashes):
   except IndexError:
     print '[-] No Common Attributes Found For All Samples, Please Be More Selective'
     sys.exit(1)
-    
+
   randStrings = list(set(randStrings))
 
   ruleOutFile = open(options.RuleName + ".yar", "w")
@@ -91,9 +96,10 @@ def main():
 
   #get hashes and strings 
   for f in os.listdir(workingdir):
-  	fhash = md5sum(workingdir + f)
-  	fileDict[fhash] = getStrings(workingdir + f)
-  	hashList.append(fhash)
+    if os.path.isfile(workingdir + f) and not f.startswith("."):
+  	 fhash = md5sum(workingdir + f)
+  	 fileDict[fhash] = getStrings(workingdir + f)
+  	 hashList.append(fhash)
   
   #Isolate strings present in all files
   finalStringList = findCommonStrings(fileDict)
