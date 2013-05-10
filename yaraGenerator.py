@@ -8,12 +8,15 @@ import re, sys, os, argparse, hashlib, random
 from datetime import datetime
 
 def getStrings(filename):
-  data = open(filename,'rb').read()
-  chars = r"A-Za-z0-9/\-:.,_$%@'()\\\{\};\]\[<> "
-  regexp = '[%s]{%d,}' % (chars, 6)
-  pattern = re.compile(regexp)
-  strlist = pattern.findall(data)
-  return list(set(strlist))
+  try:
+    data = open(filename,'rb').read()
+    chars = r"A-Za-z0-9/\-:.,_$%@'()\\\{\};\]\[<> "
+    regexp = '[%s]{%d,}' % (chars, 6)
+    pattern = re.compile(regexp)
+    strlist = pattern.findall(data)
+    return list(set(strlist))
+  except Exception:
+    print '[-] No Extractable Strings Present in: '+ filename
 
 def md5sum(filename):
   fh = open(filename, 'rb')
@@ -42,8 +45,13 @@ def findCommonStrings(fileDict):
 def buildYara(options, strings, hashes):
   date = datetime.now().strftime("%Y-%m-%d")
   randStrings = []
-  for i in range(1,30):
-  	randStrings.append(random.choice(strings))
+  try:
+    for i in range(1,30):
+  	 randStrings.append(random.choice(strings))
+  except IndexError:
+    print '[-] No Common Attributes Found For All Samples, Please Be More Selective'
+    sys.exit(1)
+    
   randStrings = list(set(randStrings))
 
   ruleOutFile = open(options.RuleName + ".yar", "w")
