@@ -11,11 +11,14 @@ def getStrings(filename):
   try:
     data = open(filename,'rb').read()
     chars = r"A-Za-z0-9/\-:.,_$%@'()\\\{\};\]\[<> "
-    regexp = '[%s]{%d,}' % (chars, 6)
+    regexp = '[%s]{%d,100}' % (chars, 6)
     pattern = re.compile(regexp)
     strlist = pattern.findall(data)
-    if len(strlist) > 0:
-      return list(set(strlist))
+    unicode_str = re.compile( ur'(?:[\x20-\x7E][\x00]){6,100}',re.UNICODE ) 
+    unicodelist = unicode_str.findall(data) 
+    allstrings = unicodelist + strlist
+    if len(allstrings) > 0:
+      return list(set(allstrings))
     else:
       print '[!] No Extractable Attributes Present in: '+ filename + "\n[!] Please Remove it from the Sample Set and Try Again"
       sys.exit(1) 
@@ -60,7 +63,10 @@ def buildYara(options, strings, hashes):
   randStrings = list(set(randStrings))
 
   ruleOutFile = open(options.RuleName + ".yar", "w")
-  ruleOutFile.write("rule "+options.RuleName+"\n")
+  ruleOutFile.write("rule "+options.RuleName)
+  if options.Tags:
+    ruleOutFile.write(" : " + options.Tags)
+  ruleOutFile.write("\n")
   ruleOutFile.write("{\n")
   ruleOutFile.write("meta:\n")
   ruleOutFile.write("\tauthor = \""+ options.Author + "\"\n")
@@ -71,7 +77,10 @@ def buildYara(options, strings, hashes):
   ruleOutFile.write("\tyaragenerator = \"https://github.com/Xen0ph0n/YaraGenerator\"\n")
   ruleOutFile.write("strings:\n")
   for s in randStrings:
-  	ruleOutFile.write("\t$string"+str(randStrings.index(s))+" = \""+ s.replace("\\","\\\\") +"\"\n")
+    if "\x00" in s:
+      ruleOutFile.write("\t$string"+str(randStrings.index(s))+" = \""+ s.replace("\\","\\\\").replace('"','\\"').replace("\x00","") +"\" wide\n")
+    else:  
+      ruleOutFile.write("\t$string"+str(randStrings.index(s))+" = \""+ s.replace("\\","\\\\") +"\"\n")
   ruleOutFile.write("condition:\n")
   ruleOutFile.write("\tall of them\n")
   ruleOutFile.write("}\n")
@@ -84,6 +93,7 @@ def main():
   opt.add_argument("-r", "--RuleName", required=True , help="Enter A Rule/Alert Name (No Spaces + Must Start with Letter)")
   opt.add_argument("-a", "--Author", default="Anonymous", help="Enter Author Name")
   opt.add_argument("-d", "--Description",default="No Description Provided",help="Provide a useful description of the Yara Rule")
+  opt.add_argument("-t", "--Tags",default="Add Tags to Yara Rule",help="Apply Tags to Yara Rule For Easy Reference (AlphaNumeric)")
   if len(sys.argv)<=2:
     opt.print_help()
     sys.exit(1)
@@ -111,6 +121,8 @@ def main():
   print "  [+] Files Examined: " + str(hashList)
   print "  [+] Author Credited: " + options.Author
   print "  [+] Rule Description: " + options.Description 
+  if options.Tags:
+    print "  [+] Rule Tags: " + options.Tags 
   print "\n[+] YaraGenerator (C) 2013 Chris@xenosec.org https://github.com/Xen0ph0n/YaraGenerator"
 
 
