@@ -13,10 +13,12 @@ The theory behind the tool is as follows:
    In the future I will create a list of thousands of strings we never want to signature for and remove them from potentials for the rules.
 
    Current hard set variables are 30 random strings selected from those present in all binary samples of six or more printable chars.
-   
+
 ## Version and Updates
 0.3 - Added support for Tags, Unicode Wide Strings (Automatically Adds "wide" tag)
+
 0.2 - Updated CLI and error handeling, removed hidden files, and ignored subdirectories
+
 0.1 - Released, supports regular string extraction
 
 ## Author & License
