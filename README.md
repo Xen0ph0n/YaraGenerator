@@ -54,7 +54,7 @@ optional arguments:
 Example Usage To Build Two Rules from 3-4 Samples:
 
 <pre>
-python yaraGenerator.py ../LVyaraRule/pipedream/ -r Win_Trojan_PipeDream -a "Chris Clark" -d "PipeDream RAT" -t "MiddleEast APT"
+python yaraGenerator.py ../pipedream/ -r Win_Trojan_PipeDream -a "Chris Clark" -d "PipeDream RAT" -t "MiddleEast APT"
 
 [+] Generating Yara Rule Win_Trojan_PipeDream from files located in: ../LVyaraRule/pipedream/
 
@@ -71,7 +71,7 @@ python yaraGenerator.py ../LVyaraRule/pipedream/ -r Win_Trojan_PipeDream -a "Chr
 Another Example for a Specific Family of APT1 Malware:
 
 <pre>
-python yaraGenerator.py ../LVyaraRule/greencat/ -r Win_Trojan_APT1_GreenCat -a "Chris Clark" -d "APT Trojan Comment Panda" -t "APT"
+python yaraGenerator.py ../greencat/ -r Win_Trojan_APT1_GreenCat -a "Chris Clark" -d "APT Trojan Comment Panda" -t "APT"
 
 [+] Generating Yara Rule Win_Trojan_APT1_GreenCat from files located in: ../LVyaraRule/greencat/
 
@@ -181,7 +181,7 @@ PipeDream:
 <pre>
 100% Hits on Samples:
 
-$ yara -g Win_Trojan_PipeDream.yar ../LVyaraRule/pipedream/
+$ yara -g Win_Trojan_PipeDream.yar ../pipedream/
 Win_Trojan_PipeDream [APT,MiddleEast] ../LVyaraRule/pipedream//VTDL50B136889962D0CBDB4F7BD460D7CD29.danger
 Win_Trojan_PipeDream [APT,MiddleEast] ../LVyaraRule/pipedream//VTDL79DCE17498E1997264346B162B09BDE8.danger
 Win_Trojan_PipeDream [APT,MiddleEast] ../LVyaraRule/pipedream//VTDL92EE1FB5DF21D8CFAFA2B02B6A25BD3B.danger
