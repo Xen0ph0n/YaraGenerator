@@ -97,35 +97,38 @@ meta:
   hash2 = "57e79f7df13c0cb01910d0c688fcd296"
   yaragenerator = "https://github.com/Xen0ph0n/YaraGenerator"
 strings:
-  $string0 = "_acmdln"
-  $string1 = "Removeable"
-  $string2 = "memset"
-  $string3 = "/s> <pid"
-  $string4 = "Process32Next"
-  $string5 = "t<Ht2Ht(Ht"
-  $string6 = "CreatePipe"
-  $string7 = "GetVolumeInformationA"
-  $string8 = "StringFileInfo" wide
-  $string9 = "OpenT failed with %d"
-  $string10 = "SpecialBuild" wide
-  $string11 = "3@YAXPAX@Z"
-  $string12 = "ServiceName>"
-  $string13 = "ControlService failed"
-  $string14 = "OriginalFilename" wide
-  $string15 = "CompanyName" wide
-  $string16 = "StartService failed"
-  $string17 = "_adjust_fdiv"
-  $string18 = "Shell started,wait to terminate it....."
-  $string19 = "__getmainargs"
-  $string20 = "GetSystemDirectoryA"
-  $string21 = "__setusermatherr"
-  $string22 = "Unkown"
-  $string23 = "Service does not exist"
-  $string24 = "CreateFileA"
-  $string25 = "Create failed with %d"
+  $string0 = "OpenServiceA"
+  $string1 = "OpenP failed with %d"
+  $string2 = "Removeable"
+  $string3 = "getf/putf FileName <N>"
+  $string4 = "Mozilla/5.0"
+  $string5 = "ControlService"
+  $string6 = "Bad Request (Invalid Hostname)"
+  $string7 = "strlen"
+  $string8 = "OriginalFilename" wide
+  $string9 = "Shell started,wait to terminate it....."
+  $string10 = "lstrcatA"
+  $string11 = "Service still running"
+  $string12 = "strrchr"
+  $string13 = "Ramdisk"
+  $string14 = "%-26s %5d"
+  $string15 = "YYt5j\\"
+  $string16 = "__p__commode"
+  $string17 = "GetUrl URL FileName"
+  $string18 = "_strcmpi"
+  $string19 = "ReadFile"
+  $string20 = "Shell started successfully"
+  $string21 = "Sleep Time:"
+  $string22 = "CreateProcessA"
+  $string23 = "InternetOpenA"
+  $string24 = "Pragma:no-cache"
+  $string25 = "CreateFileA"
+  $string26 = "_initterm"
 condition:
   all of them
 }
+
+
 
 </pre>
 <pre>
@@ -209,27 +212,28 @@ Trojan_Win_GreenCat [APT] greencat//c23039cf2f859e659e59ec362277321fbcdac680e6d9
 100% True Positives On Other Samples In the APT1 Cadre which were detected as Green Cat By Other Yara Rules:
 
 $ yara -r Trojan_Win_GreenCat.yar ../../MalwareSamples/APT1Malware/
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//13765eb12853f6268ce5052295c25e2fe53acf6e7b04c1c0ae1c78c5f4ae52bf
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//14a22f11c0121492cfabc529bcffecda5d076e79e459a87b87e6db7c20b6c89d
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//1877a5d2f9c415109a8ac323f43be1dc10c546a72ab7207a96c6e6e71a132956
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//20ed6218575155517f19d4ce46a9addbf49dcadb8f5d7bd93efdccfe1925c7d0
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//25485ac0aaceb982231a4d5f08e81b4dcf04b4e531d33145b5d6a5ee8d50d138
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//25f3aa7489eccce3fdd84b62d0285885f413b1d9696a947842a1b5581f25816a
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//4144820d9b31c4d3c54025a4368b32f727077c3ec253753360349a783846747f
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//4487b345f63d20c6b91eec8ee86c307911b1f2c3e29f337aa96a4a238bf2e87c
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//468bef292236e98a053333983f7094f64551a05509837c775fa65fdb785ca95a
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//6ad0190caa69dc0d662088f86aab7ee3355e788b1196552dd7487f6052150d8e
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//6c38678549ff31aff2c0164566c2494f57987b1af43650f476a824fc10b26108
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//72e01e875b93e6808e8fff0e8a8f19b842ed213a9fcb38c175f6e8533af57d51
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//78e07f4cbbbf119e5dac565e764a4fc7cf2d1938e5948cea03ae3b597d63c34f
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//7d4e44037e53b6e5de45deb9ee4cf5921b52f8eb1073136f7c853e6f42516247
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//89e0016fc5bd3cd4e25f88c70f9f8f13f81a45e3c6dc8ac2a4be44b5c5274957
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//8bf5a9e8d5bc1f44133c3f118fe8ca1701d9665a72b3893f509367905feb0a00
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//a4f141b99b50cd537644b334d14575060522ee77a7d362e49f2bdc733379f982
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//c196cac319e5c55e8169b6ed6930a10359b3db322abe8f00ed8cb83cf0888d3b
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//c23039cf2f859e659e59ec362277321fbcdac680e6d9bc93fc03c8971333c25e
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//dd5261df621077ed13be8741f748f61c5ed09bd04ca48526492fc0b559832184
-Trojan_Win_GreenCat ../../MalwareSamples/APT1Malware//f76dd93b10fc173eaf901ff1fb00ff8a9e1f31e3bd86e00ff773b244b54292c5
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//0e829513658a891006163ccbf24efc292e42cc291af85b957c1603733f0c99d4
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//13765eb12853f6268ce5052295c25e2fe53acf6e7b04c1c0ae1c78c5f4ae52bf
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//14a22f11c0121492cfabc529bcffecda5d076e79e459a87b87e6db7c20b6c89d
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//1877a5d2f9c415109a8ac323f43be1dc10c546a72ab7207a96c6e6e71a132956
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//20ed6218575155517f19d4ce46a9addbf49dcadb8f5d7bd93efdccfe1925c7d0
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//25485ac0aaceb982231a4d5f08e81b4dcf04b4e531d33145b5d6a5ee8d50d138
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//37615eaf286efabccdf9c6392f888e87fb69452bb10e204feec2acd2b02a9f83
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//4144820d9b31c4d3c54025a4368b32f727077c3ec253753360349a783846747f
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//4487b345f63d20c6b91eec8ee86c307911b1f2c3e29f337aa96a4a238bf2e87c
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//468bef292236e98a053333983f7094f64551a05509837c775fa65fdb785ca95a
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//72e01e875b93e6808e8fff0e8a8f19b842ed213a9fcb38c175f6e8533af57d51
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//78e07f4cbbbf119e5dac565e764a4fc7cf2d1938e5948cea03ae3b597d63c34f
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//7d4e44037e53b6e5de45deb9ee4cf5921b52f8eb1073136f7c853e6f42516247
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//86f5f5e5ea9bdbfb8b139cd9bc22826cea431f347f54035c5bc7a3f315d5f2f7
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//89e0016fc5bd3cd4e25f88c70f9f8f13f81a45e3c6dc8ac2a4be44b5c5274957
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//8bf5a9e8d5bc1f44133c3f118fe8ca1701d9665a72b3893f509367905feb0a00
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//a00c38c3e85b0e55c3d6adc7ec58cd48bf82d433d6b91964e08a86c6c2412cc3
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//a4f141b99b50cd537644b334d14575060522ee77a7d362e49f2bdc733379f982
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//c196cac319e5c55e8169b6ed6930a10359b3db322abe8f00ed8cb83cf0888d3b
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//c23039cf2f859e659e59ec362277321fbcdac680e6d9bc93fc03c8971333c25e
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//dd5261df621077ed13be8741f748f61c5ed09bd04ca48526492fc0b559832184
+Win_Trojan_APT1_GreenCat [APT]  MalwareSamples/APT1Malware//f76dd93b10fc173eaf901ff1fb00ff8a9e1f31e3bd86e00ff773b244b54292c5
 
 100% True Negatives on clean files:
 
