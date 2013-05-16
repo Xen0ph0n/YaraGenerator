@@ -56,7 +56,7 @@ Example Usage To Build Two Rules from 3-4 Samples:
 <pre>
 python yaraGenerator.py ../pipedream/ -r Win_Trojan_PipeDream -a "Chris Clark" -d "PipeDream RAT" -t "MiddleEast APT"
 
-[+] Generating Yara Rule Win_Trojan_PipeDream from files located in: ../LVyaraRule/pipedream/
+[+] Generating Yara Rule Win_Trojan_PipeDream from files located in: ../pipedream/
 
 [+] Yara Rule Generated: Win_Trojan_PipeDream.yar
 
@@ -73,7 +73,7 @@ Another Example for a Specific Family of APT1 Malware:
 <pre>
 python yaraGenerator.py ../greencat/ -r Win_Trojan_APT1_GreenCat -a "Chris Clark" -d "APT Trojan Comment Panda" -t "APT"
 
-[+] Generating Yara Rule Win_Trojan_APT1_GreenCat from files located in: ../LVyaraRule/greencat/
+[+] Generating Yara Rule Win_Trojan_APT1_GreenCat from files located in: ../greencat/
 
 [+] Yara Rule Generated: Win_Trojan_APT1_GreenCat.yar
 
@@ -185,10 +185,10 @@ PipeDream:
 100% Hits on Samples:
 
 $ yara -g Win_Trojan_PipeDream.yar ../pipedream/
-Win_Trojan_PipeDream [APT,MiddleEast] ../LVyaraRule/pipedream//VTDL50B136889962D0CBDB4F7BD460D7CD29.danger
-Win_Trojan_PipeDream [APT,MiddleEast] ../LVyaraRule/pipedream//VTDL79DCE17498E1997264346B162B09BDE8.danger
-Win_Trojan_PipeDream [APT,MiddleEast] ../LVyaraRule/pipedream//VTDL92EE1FB5DF21D8CFAFA2B02B6A25BD3B.danger
-Win_Trojan_PipeDream [APT,MiddleEast] ../LVyaraRule/pipedream//VTDLA669C0DA6309A930AF16381B18BA2F9D.danger
+Win_Trojan_PipeDream [APT,MiddleEast] ../pipedream//VTDL50B136889962D0CBDB4F7BD460D7CD29.danger
+Win_Trojan_PipeDream [APT,MiddleEast] ../pipedream//VTDL79DCE17498E1997264346B162B09BDE8.danger
+Win_Trojan_PipeDream [APT,MiddleEast] ../pipedream//VTDL92EE1FB5DF21D8CFAFA2B02B6A25BD3B.danger
+Win_Trojan_PipeDream [APT,MiddleEast] ../pipedream//VTDLA669C0DA6309A930AF16381B18BA2F9D.danger
 
 100% True Negatives on ~5,000 Malware Samples
 $ yara -r Trojan_Win_PipeDream.yar ../../MalwareSamples/
@@ -205,9 +205,9 @@ GreenCat Rule:
 100% Hits on Test Samples:
 
 $ yara -rg Trojan_Win_GreenCat.yar greencat/
-Trojan_Win_GreenCat [APT] greencat//8bf5a9e8d5bc1f44133c3f118fe8ca1701d9665a72b3893f509367905feb0a00
-Trojan_Win_GreenCat [APT] greencat//c196cac319e5c55e8169b6ed6930a10359b3db322abe8f00ed8cb83cf0888d3b
-Trojan_Win_GreenCat [APT] greencat//c23039cf2f859e659e59ec362277321fbcdac680e6d9bc93fc03c8971333c25e
+Trojan_Win_GreenCat [APT] ../greencat//8bf5a9e8d5bc1f44133c3f118fe8ca1701d9665a72b3893f509367905feb0a00
+Trojan_Win_GreenCat [APT] ../greencat//c196cac319e5c55e8169b6ed6930a10359b3db322abe8f00ed8cb83cf0888d3b
+Trojan_Win_GreenCat [APT] ../greencat//c23039cf2f859e659e59ec362277321fbcdac680e6d9bc93fc03c8971333c25e
 
 100% True Positives On Other Samples In the APT1 Cadre which were detected as Green Cat By Other Yara Rules:
 
