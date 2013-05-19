@@ -7,6 +7,9 @@
 import re, sys, os, argparse, hashlib, random
 from datetime import datetime
 
+pathname = os.path.abspath(os.path.dirname(sys.argv[0]))
+sys.path.append(pathname + '/modules')
+
 try:
   import pefile
 except:
