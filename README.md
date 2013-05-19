@@ -10,13 +10,13 @@ The theory behind the tool is as follows:
 
    In many ways this is less flexible than the existing methodology, but in some ways more so, as it relies less on anomalous indicators which can easily be changed. That said it needs a lot of work and tuning, because the risk is run of capturing strings only present in your sample set, but not the family at large. Lowering the critical hit from 100% of strings may approach a usable compromise there.
 
-   I've integrated PEfile so when exes are part of the cadre of samples, their imports and functions will be removed from the lists of strings, also created a blacklist so you can exclude strings such as (!This program... etc) from inclusion in rules..
+   I've integrated PEfile (http://code.google.com/p/pefile/) so when exes are part of the cadre of samples, their imports and functions will be removed from the lists of strings, also created a blacklist so you can exclude strings such as (!This program... etc) from inclusion in rules..
 
    I've lowered the string count to 20 from 30 to reflect these changes, of course the final number may be lower due to number of common strings, and random selection. 
 
 
 ## Version and Updates
-0.4 - Added PEfile to extract and remove imports and functions from yara rules, added blacklist.txt to remove unwanted strings
+0.4 - Added PEfile (http://code.google.com/p/pefile/) to extract and remove imports and functions from yara rules, added blacklist.txt to remove unwanted strings
 
 0.3 - Added support for Tags, Unicode Wide Strings (Automatically Adds "wide" tag)
 
