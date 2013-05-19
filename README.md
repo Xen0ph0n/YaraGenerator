@@ -106,7 +106,7 @@ strings:
   $string3 = "Service doesn't start"
   $string4 = "Service stopped"
   $string5 = "OpenP failed with %d"
-  $string6 = ">Bad Request (Invalid Hostname)<"
+  $string6 = "Bad Request (Invalid Hostname)"
   $string7 = "Invalid"
   $string9 = "pidrun"
   $string10 = "Comments" wide
