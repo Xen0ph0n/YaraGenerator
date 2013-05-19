@@ -87,7 +87,7 @@ python yaraGenerator.py ../greencat/ -r Win_Trojan_APT1_GreenCat -a "Chris Clark
 [+] YaraGenerator (C) 2013 Chris@xenosec.org https://github.com/Xen0ph0n/YaraGenerator
 </pre>
 Resulting Yara Rules:
-<pre>
+<code>
 rule Win_Trojan_APT1_GreenCat : APT
 {
 meta:
@@ -132,7 +132,7 @@ condition:
 
 
 
-</pre>
+</code>
 <pre>
 rule Win_Trojan_PipeDream : MiddleEast APT
 {
