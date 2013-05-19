@@ -7,6 +7,14 @@
 import re, sys, os, argparse, hashlib, random
 from datetime import datetime
 
+try:
+  import pefile
+except:
+  print "pefile not installed or present in ./modules directory"
+
+with open('modules/blacklist.txt') as f:
+  blacklist = f.read().splitlines()
+
 def getStrings(filename):
   try:
     data = open(filename,'rb').read()
@@ -17,8 +25,23 @@ def getStrings(filename):
     unicode_str = re.compile( ur'(?:[\x20-\x7E][\x00]){6,100}',re.UNICODE ) 
     unicodelist = unicode_str.findall(data) 
     allstrings = unicodelist + strlist
+    for black in blacklist:
+      if black in allstrings: allstrings.remove(black)
     if len(allstrings) > 0:
-      return list(set(allstrings))
+      try:
+        # use pefile to extract names of imports and function calls and remove them from string list
+        pe = pefile.PE(filename)
+        importlist = []
+        for entry in pe.DIRECTORY_ENTRY_IMPORT: 
+          importlist.append(entry.dll)
+          for imp in entry.imports:
+            importlist.append(imp.name)
+        for imp in importlist:
+          if imp in allstrings: allstrings.remove(imp)
+        print allstrings
+        return list(set(allstrings))
+      except:  
+        return list(set(allstrings))
     else:
       print '[!] No Extractable Attributes Present in: '+ filename + "\n[!] Please Remove it from the Sample Set and Try Again"
       sys.exit(1) 
@@ -93,7 +116,7 @@ def main():
   opt.add_argument("-r", "--RuleName", required=True , help="Enter A Rule/Alert Name (No Spaces + Must Start with Letter)")
   opt.add_argument("-a", "--Author", default="Anonymous", help="Enter Author Name")
   opt.add_argument("-d", "--Description",default="No Description Provided",help="Provide a useful description of the Yara Rule")
-  opt.add_argument("-t", "--Tags",default="Add Tags to Yara Rule",help="Apply Tags to Yara Rule For Easy Reference (AlphaNumeric)")
+  opt.add_argument("-t", "--Tags",default="",help="Apply Tags to Yara Rule For Easy Reference (AlphaNumeric)")
   if len(sys.argv)<=2:
     opt.print_help()
     sys.exit(1)
