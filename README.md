@@ -15,7 +15,7 @@ The theory behind the tool is as follows:
    Current hard set variables are 30 random strings selected from those present in all binary samples of six or more printable chars.
 
 ## Version and Updates
-0.4 - Added PEframe to extract and remove imports and functions from yara rules, added blacklist.txt to remove unwanted strings
+0.4 - Added PEfile to extract and remove imports and functions from yara rules, added blacklist.txt to remove unwanted strings
 
 0.3 - Added support for Tags, Unicode Wide Strings (Automatically Adds "wide" tag)
 
@@ -92,43 +92,43 @@ rule Win_Trojan_APT1_GreenCat : APT
 {
 meta:
   author = "Chris Clark"
-  date = "2013-05-15"
+  date = "2013-05-18"
   description = "APT Trojan Comment Panda"
   hash0 = "871cc547feb9dbec0285321068e392b8"
   hash1 = "6570163cd34454b3d1476c134d44b9d9"
   hash2 = "57e79f7df13c0cb01910d0c688fcd296"
   yaragenerator = "https://github.com/Xen0ph0n/YaraGenerator"
 strings:
-  $string0 = "OpenServiceA"
-  $string1 = "OpenP failed with %d"
-  $string2 = "Removeable"
-  $string3 = "getf/putf FileName <N>"
+  $string0 = "Cache-Control:max-age"
+  $string1 = "\\tasks"
+  $string2 = "%-24s %s"
+  $string3 = "FileVersion" wide
   $string4 = "Mozilla/5.0"
-  $string5 = "ControlService"
-  $string6 = "Bad Request (Invalid Hostname)"
-  $string7 = "strlen"
-  $string8 = "OriginalFilename" wide
-  $string9 = "Shell started,wait to terminate it....."
-  $string10 = "lstrcatA"
-  $string11 = "Service still running"
-  $string12 = "strrchr"
-  $string13 = "Ramdisk"
-  $string14 = "%-26s %5d"
-  $string15 = "YYt5j\\"
-  $string16 = "__p__commode"
-  $string17 = "GetUrl URL FileName"
-  $string18 = "_strcmpi"
-  $string19 = "ReadFile"
-  $string20 = "Shell started successfully"
-  $string21 = "Sleep Time:"
-  $string22 = "CreateProcessA"
-  $string23 = "InternetOpenA"
-  $string24 = "Pragma:no-cache"
-  $string25 = "CreateFileA"
-  $string26 = "_initterm"
+  $string5 = "GetFileAttributes Error code: %d"
+  $string6 = "kill </p"
+  $string7 = "start </p"
+  $string8 = "Ramdisk"
+  $string9 = "Volume"
+  $string10 = "VarFileInfo" wide
+  $string11 = "CmdPath"
+  $string12 = "ServiceName>"
+  $string13 = " and the PID is %d"
+  $string14 = "Removeable"
+  $string15 = "InternalName" wide
+  $string16 = "%-26s %5d"
+  $string17 = "Copyright ? 2002" wide
+  $string18 = "PrivateBuild" wide
+  $string19 = "So long"
+  $string20 = "SMAgent" wide
+  $string21 = "040904e4" wide
+  $string22 = "geturl"
+  $string23 = "list service failed"
+  $string24 = "Shell started fail"
+  $string25 = "Cache-Control:no-cache"
 condition:
   all of them
 }
+
 
 
 
@@ -138,7 +138,7 @@ rule Win_Trojan_PipeDream : MiddleEast APT
 {
 meta:
   author = "Chris Clark"
-  date = "2013-05-15"
+  date = "2013-05-18"
   description = "PipeDream RAT"
   hash0 = "50b136889962d0cbdb4f7bd460d7cd29"
   hash1 = "79dce17498e1997264346b162b09bde8"
@@ -146,36 +146,37 @@ meta:
   hash3 = "a669c0da6309a930af16381b18ba2f9d"
   yaragenerator = "https://github.com/Xen0ph0n/YaraGenerator"
 strings:
-  $string0 = "ConditionalCompareObjectEqual"
-  $string1 = "RegistryKey"
-  $string2 = "LateCall"
-  $string3 = "LateGet"
-  $string4 = "kernel32.dll"
-  $string5 = "SetProjectError"
-  $string6 = "Thread"
-  $string7 = "DebuggerHiddenAttribute"
-  $string8 = "MyGroupCollectionAttribute"
-  $string9 = "Software\\Microsoft\\Windows\\CurrentVersion\\Run" wide
+  $string0 = "ToArray"
+  $string1 = "Dispose"
+  $string2 = "get_Name"
+  $string3 = "DateTime"
+  $string4 = "ClassName"
+  $string5 = "MyWebServices"
+  $string6 = "EndApp"
+  $string7 = "get_PrimaryScreen"
+  $string8 = "get_Location"
+  $string9 = "DebuggerStepThroughAttribute"
   $string10 = "yyyy-MM-dd" wide
-  $string11 = "get_User"
-  $string12 = "TcpClient"
-  $string13 = "LateIndexGet"
-  $string14 = "StartsWith"
-  $string15 = "Exception"
-  $string16 = "CompressionMode"
-  $string17 = "EditorBrowsableAttribute"
-  $string18 = "MyProject"
-  $string19 = "m_AppObjectProvider"
-  $string20 = "WriteAllBytes"
+  $string11 = "CompareMethod"
+  $string12 = "GetVolumeInformation"
+  $string13 = "Thread"
+  $string14 = "GetFolderPath"
+  $string15 = "LateSet"
+  $string16 = "My.Computer"
+  $string17 = "ToBase64String"
+  $string18 = "System.Runtime.InteropServices"
+  $string19 = "WinTitle"
+  $string20 = "Windows" wide
   $string21 = "get_Position"
-  $string22 = "Exists"
-  $string23 = "netsh firewall delete allowedprogram \"" wide
-  $string24 = "Stream"
-  $string25 = "Bitmap"
-  $string26 = "cmd.exe /k ping 0 & del \"" wide
+  $string22 = "lpVolumeSerialNumber"
+  $string23 = "Locale"
+  $string24 = "StandardModuleAttribute"
+  $string25 = "netsh firewall delete allowedprogram \"" wide
+  $string26 = "System.IO.Compression"
 condition:
   all of them
 }
+
 
 </pre>
 
