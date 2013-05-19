@@ -13,7 +13,8 @@ sys.path.append(pathname + '/modules')
 try:
   import pefile
 except:
-  print "pefile not installed or present in ./modules directory"
+  print "[!] PEfile not installed or present in ./modules directory"
+  sys.exit(1) 
 
 with open('modules/blacklist.txt') as f:
   blacklist = f.read().splitlines()
