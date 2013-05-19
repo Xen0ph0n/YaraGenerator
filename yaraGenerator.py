@@ -76,7 +76,7 @@ def buildYara(options, strings, hashes):
   date = datetime.now().strftime("%Y-%m-%d")
   randStrings = []
   try:
-    for i in range(1,30):
+    for i in range(1,20):
   	 randStrings.append(random.choice(strings))
   except IndexError:
     print '[!] No Common Attributes Found For All Samples, Please Be More Selective'

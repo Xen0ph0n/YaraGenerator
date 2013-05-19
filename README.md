@@ -10,9 +10,10 @@ The theory behind the tool is as follows:
 
    In many ways this is less flexible than the existing methodology, but in some ways more so, as it relies less on anomalous indicators which can easily be changed. That said it needs a lot of work and tuning, because the risk is run of capturing strings only present in your sample set, but not the family at large. Lowering the critical hit from 100% of strings may approach a usable compromise there.
 
-   In the future I will create a list of thousands of strings we never want to signature for and remove them from potentials for the rules.
+   I've integrated PEfile so when exes are part of the cadre of samples, their imports and functions will be removed from the lists of strings, also created a blacklist so you can exclude strings such as (!This program... etc) from inclusion in rules..
 
-   Current hard set variables are 30 random strings selected from those present in all binary samples of six or more printable chars.
+   I've lowered the string count to 20 from 30 to reflect these changes, of course the final number may be lower due to number of common strings, and random selection. 
+
 
 ## Version and Updates
 0.4 - Added PEfile to extract and remove imports and functions from yara rules, added blacklist.txt to remove unwanted strings
@@ -87,7 +88,7 @@ python yaraGenerator.py ../greencat/ -r Win_Trojan_APT1_GreenCat -a "Chris Clark
 [+] YaraGenerator (C) 2013 Chris@xenosec.org https://github.com/Xen0ph0n/YaraGenerator
 </pre>
 Resulting Yara Rules:
-<code>
+<pre>
 rule Win_Trojan_APT1_GreenCat : APT
 {
 meta:
@@ -99,40 +100,27 @@ meta:
   hash2 = "57e79f7df13c0cb01910d0c688fcd296"
   yaragenerator = "https://github.com/Xen0ph0n/YaraGenerator"
 strings:
-  $string0 = "Cache-Control:max-age"
-  $string1 = "\\tasks"
-  $string2 = "%-24s %s"
-  $string3 = "FileVersion" wide
-  $string4 = "Mozilla/5.0"
-  $string5 = "GetFileAttributes Error code: %d"
-  $string6 = "kill </p"
-  $string7 = "start </p"
-  $string8 = "Ramdisk"
-  $string9 = "Volume"
-  $string10 = "VarFileInfo" wide
-  $string11 = "CmdPath"
-  $string12 = "ServiceName>"
-  $string13 = " and the PID is %d"
-  $string14 = "Removeable"
-  $string15 = "InternalName" wide
-  $string16 = "%-26s %5d"
-  $string17 = "Copyright ? 2002" wide
-  $string18 = "PrivateBuild" wide
-  $string19 = "So long"
-  $string20 = "SMAgent" wide
-  $string21 = "040904e4" wide
-  $string22 = "geturl"
-  $string23 = "list service failed"
-  $string24 = "Shell started fail"
-  $string25 = "Cache-Control:no-cache"
+  $string0 = "ProductName" wide
+  $string1 = "t4j SV3"
+  $string2 = "Remote"
+  $string3 = "Service doesn't start"
+  $string4 = "Service stopped"
+  $string5 = "OpenP failed with %d"
+  $string6 = "<h1>Bad Request (Invalid Hostname)</h1>"
+  $string7 = "Invalid"
+  $string9 = "pidrun"
+  $string10 = "Comments" wide
+  $string11 = "Totally %d volumes found."
+  $string12 = "QVVVPVV"
+  $string13 = "ServiceName>"
+  $string14 = "Analog Devices, Inc." wide
+  $string15 = " and the PID is %d"
+  $string16 = "Create failed with %d"
 condition:
   all of them
 }
 
-
-
-
-</code>
+</pre>
 <pre>
 rule Win_Trojan_PipeDream : MiddleEast APT
 {
@@ -146,36 +134,26 @@ meta:
   hash3 = "a669c0da6309a930af16381b18ba2f9d"
   yaragenerator = "https://github.com/Xen0ph0n/YaraGenerator"
 strings:
-  $string0 = "ToArray"
-  $string1 = "Dispose"
-  $string2 = "get_Name"
-  $string3 = "DateTime"
-  $string4 = "ClassName"
-  $string5 = "MyWebServices"
-  $string6 = "EndApp"
-  $string7 = "get_PrimaryScreen"
-  $string8 = "get_Location"
-  $string9 = "DebuggerStepThroughAttribute"
-  $string10 = "yyyy-MM-dd" wide
-  $string11 = "CompareMethod"
-  $string12 = "GetVolumeInformation"
-  $string13 = "Thread"
-  $string14 = "GetFolderPath"
-  $string15 = "LateSet"
-  $string16 = "My.Computer"
-  $string17 = "ToBase64String"
-  $string18 = "System.Runtime.InteropServices"
-  $string19 = "WinTitle"
-  $string20 = "Windows" wide
-  $string21 = "get_Position"
-  $string22 = "lpVolumeSerialNumber"
-  $string23 = "Locale"
-  $string24 = "StandardModuleAttribute"
-  $string25 = "netsh firewall delete allowedprogram \"" wide
-  $string26 = "System.IO.Compression"
+  $string0 = "GetWindowThreadProcessId"
+  $string1 = "LateIndexGet"
+  $string2 = "lpVolumeNameBuffer"
+  $string3 = "Assembly"
+  $string4 = "Thread"
+  $string5 = "7JU]dkr" wide
+  $string6 = "Encoding"
+  $string7 = "Process"
+  $string8 = "WrapNonExceptionThrows"
+  $string9 = "DirectoryInfo"
+  $string10 = "Activator"
+  $string11 = "[endof]" wide
+  $string12 = "cbName"
+  $string13 = "MaxLength"
+  $string14 = "GetHashCode"
+  $string15 = "System.Drawing"
 condition:
   all of them
 }
+
 
 
 </pre>
