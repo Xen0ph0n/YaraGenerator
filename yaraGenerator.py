@@ -38,7 +38,6 @@ def getStrings(filename):
             importlist.append(imp.name)
         for imp in importlist:
           if imp in allstrings: allstrings.remove(imp)
-        print allstrings
         return list(set(allstrings))
       except:  
         return list(set(allstrings))
