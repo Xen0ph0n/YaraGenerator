@@ -29,11 +29,14 @@ def getStrings(filename):
     regexp = '[%s]{%d,100}' % (chars, 6)
     pattern = re.compile(regexp)
     strlist = pattern.findall(data)
+    #Get Wide Strings
     unicode_str = re.compile( ur'(?:[\x20-\x7E][\x00]){6,100}',re.UNICODE ) 
     unicodelist = unicode_str.findall(data) 
     allstrings = unicodelist + strlist
+    #Match Against Blacklist
     for black in blacklist:
       if black in allstrings: allstrings.remove(black)
+    #Match Against Regex Blacklist
     regmatchlist = []
     for regblack in regblacklist:
       for string in allstrings:
@@ -42,9 +45,9 @@ def getStrings(filename):
     if len(regmatchlist) > 0:
       for match in regmatchlist:
         allstrings.remove(match)
+    # use pefile to extract names of imports and function calls and remove them from string list
     if len(allstrings) > 0:
       try:
-        # use pefile to extract names of imports and function calls and remove them from string list
         pe = pefile.PE(filename)
         importlist = []
         for entry in pe.DIRECTORY_ENTRY_IMPORT: 
