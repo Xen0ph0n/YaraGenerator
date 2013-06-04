@@ -91,36 +91,38 @@ python yaraGenerator.py ../greencat/ -r Win_Trojan_APT1_GreenCat -a "Chris Clark
 </pre>
 Resulting Yara Rules:
 <pre>
-rule Win_Trojan_APT1_GreenCat : APT
+rule Win_Trojan_APT_APT1_Greencat : APT
 {
 meta:
   author = "Chris Clark"
-  date = "2013-05-18"
-  description = "APT Trojan Comment Panda"
-  hash0 = "871cc547feb9dbec0285321068e392b8"
-  hash1 = "6570163cd34454b3d1476c134d44b9d9"
-  hash2 = "57e79f7df13c0cb01910d0c688fcd296"
+  date = "2013-06-04"
+  description = "APT Trojan Comment Crew Greencat"
+  hash0 = "57e79f7df13c0cb01910d0c688fcd296"
+  hash1 = "871cc547feb9dbec0285321068e392b8"
+  hash2 = "6570163cd34454b3d1476c134d44b9d9"
   yaragenerator = "https://github.com/Xen0ph0n/YaraGenerator"
 strings:
-  $string0 = "ProductName" wide
-  $string1 = "t4j SV3"
-  $string2 = "Remote"
-  $string3 = "Service doesn't start"
-  $string4 = "Service stopped"
-  $string5 = "OpenP failed with %d"
-  $string6 = "Bad Request (Invalid Hostname)"
-  $string7 = "Invalid"
-  $string9 = "pidrun"
-  $string10 = "Comments" wide
-  $string11 = "Totally %d volumes found."
-  $string12 = "QVVVPVV"
-  $string13 = "ServiceName>"
-  $string14 = "Analog Devices, Inc." wide
-  $string15 = " and the PID is %d"
-  $string16 = "Create failed with %d"
+  $string0 = "Ramdisk"
+  $string1 = "Cache-Control:max-age"
+  $string2 = "YYSSSSS"
+  $string3 = "\\cmd.exe"
+  $string4 = "Translation" wide
+  $string5 = "CD-ROM"
+  $string6 = "Mozilla/5.0"
+  $string7 = "Volume on this computer:"
+  $string8 = "pidrun"
+  $string9 = "3@YAXPAX@Z"
+  $string10 = "SMAgent.exe" wide
+  $string11 = "Shell started successfully"
+  $string12 = "Content-Length: %d"
+  $string13 = "t4j SV3"
+  $string14 = "Program started"
+  $string15 = "Started already,"
+  $string16 = "SoundMAX service agent" wide
 condition:
   all of them
 }
+
 
 </pre>
 <pre>
@@ -141,7 +143,7 @@ strings:
   $string2 = "lpVolumeNameBuffer"
   $string3 = "Assembly"
   $string4 = "Thread"
-  $string5 = "7JU]dkr" wide
+  $string5 = "Trojan.exe" wide
   $string6 = "Encoding"
   $string7 = "Process"
   $string8 = "WrapNonExceptionThrows"
