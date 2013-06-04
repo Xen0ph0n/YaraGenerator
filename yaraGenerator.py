@@ -34,10 +34,14 @@ def getStrings(filename):
     allstrings = unicodelist + strlist
     for black in blacklist:
       if black in allstrings: allstrings.remove(black)
+    regmatchlist = []
     for regblack in regblacklist:
       for string in allstrings:
-        regex = re.compile(regblack)
-        if regex.match(string): allstrings.remove(string)
+        regex = re.compile(regblack) 
+        if regex.match(string): regmatchlist.append(string)
+    if len(regmatchlist) > 0:
+      for match in regmatchlist:
+        allstrings.remove(match)
     if len(allstrings) > 0:
       try:
         # use pefile to extract names of imports and function calls and remove them from string list
