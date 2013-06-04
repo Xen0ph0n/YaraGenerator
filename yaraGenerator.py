@@ -19,6 +19,9 @@ except:
 with open('modules/blacklist.txt') as f:
   blacklist = f.read().splitlines()
 
+with open('modules/regexblacklist.txt') as f:
+  regblacklist = f.read().splitlines()
+
 def getStrings(filename):
   try:
     data = open(filename,'rb').read()
@@ -31,6 +34,10 @@ def getStrings(filename):
     allstrings = unicodelist + strlist
     for black in blacklist:
       if black in allstrings: allstrings.remove(black)
+    for regblack in regblacklist:
+      for string in allstrings:
+        regex = re.compile(regblack)
+        if regex.match(string): allstrings.remove(string)
     if len(allstrings) > 0:
       try:
         # use pefile to extract names of imports and function calls and remove them from string list
