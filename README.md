@@ -16,6 +16,8 @@ The theory behind the tool is as follows:
 
 
 ## Version and Updates
+0.5 - Created functionality to enter regexes in modules/regexblacklist.txt which will remove matches from potential strings included in yara rules (Don't forget ^ and $ to match full strings vs pieces (if you enter "you" anything containing it will be removed)) also added 30K strings to blacklist. 
+
 0.4 - Added PEfile (http://code.google.com/p/pefile/) to extract and remove imports and functions from yara rules, added blacklist.txt to remove unwanted strings
 
 0.3 - Added support for Tags, Unicode Wide Strings (Automatically Adds "wide" tag)
