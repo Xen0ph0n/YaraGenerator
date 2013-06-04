@@ -604,9 +604,7 @@ $$$/Filters/Categories/Blur=Blur
 :^p2}FFd
 <((<XF:FXggggggggggggggggggggggggggggggggggggggggggggggggg
 AGTPAtga
-
 A\_^][I
-
 A]A\_][I
 A]A\_^[
 A]A\_^]
@@ -738,7 +736,6 @@ name: '$$$/PCX/DialogName/AboutPCX=About PCX File Format',
 name: '$$$/Pixar/DialogName/AboutPixar=About Pixar File Format',
 name: '$$$/Plugins/Lizards/WIAWizard/DialogName/AboutWIAWizard=About WIA Support',
 name: '$$$/Solarize/DialogName/AboutSolarize=About Solarize',
-
 person_321
 selector
 style="left:%lfin; top:%lfin;"
@@ -952,8 +949,7 @@ win_dialog_type: standard_plugin_about )
 #http://logo.verisign.com/vslogo.gif04
 #invertalphaEffect.PluginSupportInfo
 #m:4RZ0K
-#nZS4.-
-#nnnXn2
+#nZS4.-#nnnXn2
 #pvtControlWW,
 #rainbowloomEffect.PluginSupportInfo
 #silhouetteplus Plugin for Paint.NET
@@ -1189,7 +1185,6 @@ $9e4c0435-e1b0-4633-8cc4-83dc2cdc7b62
 $9fdcf617-851d-491a-9361-08705c8e2f43
 $9fdcf617-851d-491a-9361-08705c9e2c42
 $9fdcf617-851d-491a-9361-08f55c8e2f43
-
 $A^A]A\^
 $Acquire TWAIN-sources from Paint.NET
 $ActiveCommandWWW
@@ -1428,15 +1423,13 @@ $xs6"WB
 &silhouetteplusEffect.PluginSupportInfo
 &xpbstrIndexWW
 &xpbstrIndexWW$
-&|j'OUc
-'":;*?|[]<>(){}
+&|j'OUc'":;*?|[]<>(){}
 '%APPID%' = s 'MSTTSCommon'
 '%s' is not a file or directory (enmType=%d)
 '%s': starts with root spec
 '%s': too large (%'RU64 bytes)
 '&&'&')&%,
 '''ddd@
-
 '.5<=6/7>?@@@@@@@@@@@@@@@@d
 '3+gv]D
 '8D< usI
@@ -1468,7 +1461,6 @@ $xs6"WB
 'oooooooUC::CEEl/*oooo;
 'phips_fill_gapsEffect.PluginSupportInfo
 'tag'Mj
-
 ( m_pWlcService->CreateRDPConnection( pStream, RDPWLCSVC_NETWORK_TIMEOUT, PACKET_COMPR_TYPE_MAX))
 ($$$/MediaCore/AEFilters/AECrop/Name=Crop
 ((/141/(??DD??\ZZZ\gggggggggg
@@ -1479,11 +1471,9 @@ $xs6"WB
 (*$FDhV
 (,BHIMRW[_d
 (.5)?V)8`3Y
-
 (5xxxxa,
 (?jPositionsWWW
 (@IYaa!
-
 (A]A\_^][
 (A^A\_^][
 (A^A\_^][I
@@ -1594,7 +1584,6 @@ $xs6"WB
 )Add-Remove Watermark Plugin for Paint.NET
 )Allows printing from the standard dialog.
 )ChartWhiteBalanceEffect.PluginSupportInfo
-
 )IDAT8OMSM(<a
 )IDAThC
 )IsolateWhiteBlackEffect.PluginSupportInfo
@@ -1621,7 +1610,6 @@ $xs6"WB
 *006066660000WQWWQWWWWWWVWWVwVvVVvW
 *006606060Q7QWWWWWWWVWvWVV|V
 *6606660006QWQWQWWWWWWVWvWVVVW
-
 *@#r&2_
 *AddRemoveWatermarkEffect.PluginSupportInfo
 *A}o|8p
@@ -1653,8 +1641,7 @@ $xs6"WB
 +>*'&(4
 +Copyright 2007 MadJik, All Rights Reserved.
 +EJPV\cgm
-+G@A;D$
-+GraphMaker Render effect for Paint.NET v3.0
++G@A;D$+GraphMaker Render effect for Paint.NET v3.0
 +HeapSetInformation
 +IDAT8O
 +IDAT8OcTWWg
@@ -1690,7 +1677,6 @@ $xs6"WB
 +varValue
 +varValue
 +xmario_cut_color_enEffect.PluginSupportInfo
-
 ,),3,E,W,h,
 ,,,,,,,
 ,,,,,,,,,01
@@ -1834,7 +1820,6 @@ $xs6"WB
 -verifyremote
 -version
 -version:
-
 . what() returned
 .$$$/Plugins/Lizards/WIAWizard/Name=WIA Support
 .)G!9CC
@@ -1849,7 +1834,6 @@ $xs6"WB
 ..\..\Src\TestQualifier.cpp
 ./ExtPack.manifest
 ./ExtPack.signature
-
 .</item>
 .?AU?$CAtlValidateModuleConfiguration@$00VCMpOAVModule@@@ATL@@
 .?AU?$error_info_injector@Vbad_lexical_cast@boost@@@exception_detail@boost@@
@@ -2236,7 +2220,6 @@ $xs6"WB
 .IDAT(Se
 .IDAT8Om
 .Kaleidoscope Distort effect for Paint.NET v3.0
-
 .ObjectWW
 .ObjectWWd
 .OtherFarmColorReplacerEffect.PluginSupportInfo
@@ -2252,11 +2235,8 @@ $xs6"WB
 .\ACTMGR_LOG.txt
 .\TLMUPDM_LOG.txt
 .\tlmproupdater_LOG.txt
-.`wJO2~
-.backup
-
+.`wJO2~.backup
 .phips_selective_toningEffect.PluginSupportInfo
-
 .uuRich
 .{32714800-2E5F-11d0-8B85-00AA0044F941}
 /!7'p^ r
@@ -2271,8 +2251,7 @@ $xs6"WB
 /COMPAT
 /IDAT8Oc
 /Image and photo editing software written in C#.
-/LConnectCompleteW
-/LConnectCompleteW|
+/LConnectCompleteW/LConnectCompleteW|
 /OHelpContextW
 /OHelpContextWh
 /VBoxREM2.rel
@@ -2289,8 +2268,6 @@ $xs6"WB
 /zh~}+S
 1!1F1h1
 1,1L1l1
-
-
 0 0$0(0,0004080<0@0D0H0\0
 0 0$0(0,040L0\0`0p0t0x0|0
 0 0$04080<0@0H0`0p0t0
@@ -2902,7 +2879,6 @@ $xs6"WB
 1http://crl.usertrust.com/UTN-USERFirst-Object.crl04
 1http://crl.usertrust.com/UTN-USERFirst-Object.crl05
 1z1~~`o
-
 2 2$2(2,2024282<2@2D2H2L2P2T2X2p2t2x2|2
 2 2$2(2,2024282x2|2
 2 2$2(2,202D2H2L2P2T2X2\2p2t2|2
@@ -2911,8 +2887,7 @@ $xs6"WB
 2 2,282D2P2\2h2t2
 2 2024282<2@2D2H2L2P2T2`2
 2 202=2}2
-2 2L2P2T2X2\2`2d2(3,3034383<3@3D3H3L3P3T3
-2 2M2S2X2
+2 2L2P2T2X2\2`2d2(3,3034383<3@3D3H3L3P3T32 2M2S2X2
 2!2&2.242>2E2Y2`2f2t2{2
 2!2D2Z2z2
 2#22292A2I2Q2e2n2
@@ -2971,7 +2946,6 @@ $xs6"WB
 280128120000Z0T1
 29'}5SdQ
 295&C:.
-
 2:3E3O3`3k3
 2:]{gn.q
 2Drawing a star with/without inernat/external lines
@@ -2998,7 +2972,6 @@ $xs6"WB
 2WillMovep
 2X3c3i3}3
 2`6NKlnR`
-
 2adChapterWWW
 2adChapterWWW
 2adChapterWWWL
@@ -3007,7 +2980,6 @@ $xs6"WB
 2p3x3~3
 2plParmAttribsWWW0
 2plParmAttribsWWW\
-
 4@4D4H4L4P4T4X4\4`4d4h4l4p4t4x4|4
 4B4e4l4
 3 3$3(3,3034383
@@ -3168,8 +3140,7 @@ $xs6"WB
 4\ship\0\msgfilt.dll\bbtopt\msgfiltO.pdb
 4\ship\0\npauthz.dll\bbtopt\npauthzO.pdb
 4^4s435[5
-4_Command
-4_Command|
+4_Command4_Command|
 4adBSTRWW
 4adBSTRWW
 4adBSTRWWL
@@ -3227,8 +3198,7 @@ $xs6"WB
 5C5a5j5
 5CancelUpdate
 5CancelUpdate$
-5ConnectionEventsVtWW
-5ConnectionEventsVtWW|
+5ConnectionEventsVtWW5ConnectionEventsVtWW|
 5D6P6p6x6
 5Digital ID Class 3 - Microsoft Software Validation v21
 5Digital ID Class 3 - Microsoft Software Validation v21$0"
@@ -3470,7 +3440,6 @@ $xs6"WB
 8@7=PMffffbA2Wl
 8@RILTSd
 8A RouteHandler must be specified for the selected route.BSJB
-
 8A]A\_^
 8A]A\_^][
 8A^A\_[
@@ -3488,7 +3457,6 @@ $xs6"WB
 8C.INonDestructiveDebuggeeW
 8CFHFHFHF
 8D$@u_H
-
 8DFKWu>H
 8DFKWuR
 8EoDimensionWWW
@@ -3522,8 +3490,7 @@ $xs6"WB
 8s}IInstanceMgrEventsWW
 8xTStreamTypeEnumWW
 : :0:D:L:d:p:
-9 9$9(9094989<9@9D9H9L9P9T9X9\9`9d9h9l9p9t9x9|9
-9 9$9(909H9X9\9`9h9
+9 9$9(9094989<9@9D9H9L9P9T9X9\9`9d9h9l9p9t9x9|99 9$9(909H9X9\9`9h9
 9 9$9,9D9T9X9h9l9t9
 9 9(90989@9H9P9X9`9h9p9x9
 9 9(949T9`9
@@ -3572,8 +3539,6 @@ $xs6"WB
 990128130000Z
 999888888888888888888888888888877,70
 9:9j9t9
-
-
 9A98u/A9x
 9A98u4A9x
 9B9Q9r9
@@ -3589,7 +3554,6 @@ $xs6"WB
 9IDAT8Oc
 9L$8|1H;
 9L$Pt-+L$PE
-
 9M'-7CYYgghbO)
 9M9Z9d9q9~9
 9MP_COM_CONFIG_TYPE_MULTI_SZW
@@ -3600,7 +3564,6 @@ $xs6"WB
 9T$tt=H
 9T$ttYH
 9T$xt7H
-
 9\$ v@L
 9\$4v'I
 9\$8v/H
@@ -3609,7 +3572,6 @@ $xs6"WB
 9\$XuT;
 9\$XvrE
 9\$pv#H
-
 9`9d9h9l9p9t9x9|9
 9`:d:h:l:
 9aaa(k\
@@ -3626,12 +3588,8 @@ $xs6"WB
 9t$Hu=H
 9t$`t!H
 9trail3d Plugin for Paint.NET. (Compiled by Code Lab v1.6)
-
-
 9|$pv%H
-
 :!:':,:A:G:L:a:f:l:q:
-
 : :$:(:,:0:4:8:<:@:D:H:L:P:T:X:
 : :$:(:,:0:4:8:<:@:D:H:L:P:X:\:`:d:h:l:p:t:x:|:
 : :&:A:F:R:b:h:o:
@@ -3715,12 +3673,10 @@ $xs6"WB
 ; ;0;4;D;H;L;T;l;|;
 ; ;1;C;K;Q;W;];
 ; ;5;<;S;Y;u;|;
-
 ; >$>(>,>0>4>8><>@>D>H>L>P>T>X>\>`>d>h>l>p>t>x>|>
 ; file:
 ; function:
 ; line:
-
 ;!;+;6;A;K;V;a;k;v;
 ;!;7;>;E;K;S;f;m;y;
 ;#<(<?<b<o<{<
@@ -4476,7 +4432,6 @@ $xs6"WB
 >oo*-m00+?oooooooooc0(+Joob<
 >rainbow loom Plugin for Paint.NET. (Compiled by Code Lab v1.3)
 >tp2O-Y
-
 ? ?$?(?,?0?4?8?<?@?D?H?
 ? ?(?0?8?@?H?X?l?|?
 ? ?(?8?L?\?p?x?
@@ -5262,7 +5217,6 @@ $xs6"WB
 ?X?c?q?
 ?YZ#333333
 ?YZ#ffffff
-
 ?[#333333
 ?_C@?1??_Nullstr@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@CAPBDXZ@4DB
 ?_Decref@facet@locale@std@@QAEPAV123@XZ
@@ -5745,7 +5699,6 @@ $xs6"WB
 ?write_line@_LOG@@AEAA_NPEAD_K@Z
 ?yield@this_thread@boost@@YAXXZ
 ?yield@thread@boost@@SAXXZ
-
 @ @$@(@-@2@7@<@B@H@N@T@[@b@i@p@x@
 @,NullExpr
 @,m-QTT
@@ -5756,7 +5709,6 @@ $xs6"WB
 @5yDO18.
 @6'4:0 `8&
 @8h0t$H
-
 @8s(t=H
 @8xpt"A
 J](A{*D
@@ -5768,7 +5720,6 @@ $xs6"WB
 @@@@@@@@@
 @@@@@@@@@@
 @@@|BBB|@@@
-
 @@xDDx@@
 @AA's_Assistant Plugin for Paint.NET. (Compiled by Code Lab v1.4)
 @A\_^][
@@ -5861,7 +5812,6 @@ $xs6"WB
 @X Rainbow bars Plugin for Paint.NET. (Compiled by Code Lab v1.3)
 @XPDPAdpx
 @Z#UUUUUU
-
 @[ZZX(&
 @[ZZY(&
 @]^_A^A_
@@ -5872,9 +5822,7 @@ $xs6"WB
 @p#P`$``*pp*`p1p
 @tMaxProgressW
 @tMaxProgressWp
-
 u]L9g u<H
-
 A NULL interface pointer has been dereferenced.
 A Paint.NET effect plugin...
 A Paint.NET plugin.
@@ -5887,25 +5835,20 @@ A plugin for Paint.NET.
 A supplied parameter was invalid.
 A&f9A@|
 A(HcQ(A
-
 A)A6ABAOA[AiAvA
 A05N3DD
 A0H9i8u
 A5XV$\NY-5
 A8{qt(A8{pt
-A9,$~[Ic
-A9<$uDE3
+A9,$~[IcA9<$uDE3
 A9F0vAI9F8t;E
 A9F@vFI9FHt@E
 A9FPvFI9FXt@E
 A9F`vDI9Fht>E
 A9Q$v-A
 A9v0tgH
-
 A;<$s_H
-
 A;\$8Hc
-
 A;t$ tYHc
 A;|$0sVJ
 A<  KOE3
@@ -5965,8 +5908,7 @@ ADM Basic Suite
 ADMUI3Lg
 ADMUI3Sm
 ADOConnectionConstruction15W
-ADOConnectionConstruction15W
-ADODBWWW
+ADOConnectionConstruction15WADODBWWW
 ADOMD Catalog ClassWWW
 ADOMD Cellset ClassWWW
 ADOMDWWW
@@ -6813,8 +6755,7 @@ AverageSelectionColorPlugin
 Axes collectionWWW
 Axis Interface
 AxisList
-
-B D:P$w
+B D:P$w
 B$$$/AdobePlugin/PIPLInfo/PluginName/WirelessBitmap=Wireless Bitmap
 B$$$/private/MediaCore/FiltersAndEffects/Category/Obsolete=Obsolete
 B(@8yLH
@@ -6857,7 +6798,6 @@ BSTR_UserSize64
 BSTR_UserUnmarshal64
 BThe argument '{0}' was of an invalid type or had an invalid value.
 BWu:OpWk
-
 BackColor
 BackImage
 Back_Col
@@ -6926,8 +6866,7 @@ BeginInvokeImpl
 BeginMediaEdits
 BeginPaint
 BeginPrint
-BeginTransCompleteWW
-BeginTransCompleteWW|
+BeginTransCompleteWWBeginTransCompleteWW|
 BeginTransWW
 BeginUpdate
 BeginUpload
@@ -7235,7 +7174,6 @@ C +D$@Qj
 C!C4CHC[CpC
 C$$$/AdobePlugin/PIPLInfo/PluginName/PortableBitMap=Portable Bit Map
 C(+C@;C8|
-
 C0H9S8u
 C8;C\|)9
 C8=PtaMt.=taMPt'=daeRt =tirWt
@@ -7483,7 +7421,6 @@ C<dCoNH
 C<nknUH
 C<oNtFH
 C<tPoNH
-
 CAST128-CBC
 CAllocator::CAllocator
 CAllocator::CGenericBuffer::Release Completely
@@ -7952,7 +7889,6 @@ Catalog InterfaceW
 Catalogue
 Categories
 CategoryAttribute
-
 Cdf9GduIH
 CeilInt
 Ceiling
@@ -8337,8 +8273,7 @@ CommandTextW
 CommandTimeoutWW
 CommandTypeEnumW
 Commands:
-CommitTransCompleteW
-CommitTransCompleteW|
+CommitTransCompleteWCommitTransCompleteW|
 CommitTransW
 CommitTransW$
 Common.DLL
@@ -8833,9 +8768,7 @@ Cxmovi+
 CyanotypeAdjustment
 CyanotypeImage
 D"X\\d"
-
-
-D$ ;D$$}lH
+D$ ;D$$}lH
 D$ ;D$,
 D$ H;{ v
 D$ Hc\$(M
@@ -8912,7 +8845,6 @@ D$<9D$,
 D$<CToNH
 D$<FmemH
 D$<f+D$4f
-
 D$<msmDH
 D$<rESPH
 D$<tMoNH
@@ -8990,15 +8922,13 @@ D$`SSND
 D$`VUYAH
 D$`f;|$`t
 D$`vUYaH
-
 D$h+D$`D+
 D$h<(ti<Nt_<TuzL
 D$hodml
 D$hstrl
 D$ht(fD
 D$l+D$d
-D$p=nzrHt
-D$pH9shu
+D$p=nzrHtD$pH9shu
 D$xH9D$pt
 D$xH9D$ptFH
 D$xSUVW
@@ -9008,21 +8938,16 @@ D.DDDZDqD
 D.R!!R.D
 D0D0H0(
 D0~0Y0K0
-
 D8c/t=L9
 D8e(uDD
 D8v1t0D8v0t
-
 D9.u?D9i u9I
-
 D9K0~`E3
 D9\$0t.
 D9cXv1I
 D9cXv4I
 D9c`t,fD9c
 D9d$Pta
-
-
 D9t$0uX
 D9t$Pv(L
 D9t$Pv+L
@@ -9094,7 +9019,6 @@ D:\tinderbox\win-4.1\src\VBox\HostServices\SharedFolders\vbsf.cpp
 D:\tinderbox\win-4.1\src\VBox\Main\glue\string.cpp
 D:\tinderbox\win-4.1\src\VBox\Main\src-all\ExtPackUtil.cpp
 D:\tinderbox\win-4.1\src\VBox\Main\src-helper-apps\VBoxExtPackHelperApp.cpp
-
 D;u@s'I
 DATA: g_fDelayedAnnouncement = %d, g_u32DelayedFormats = 0x%x
 DAT_CAPABILITY/MSG_GET failed
@@ -9581,8 +9505,7 @@ Domain error
 DonateButton
 DonateLinkLabel
 Doooool
-DooooooooK
-Dosadi.EZTwain
+DooooooooKDosadi.EZTwain
 DotAtCenter2
 DotAtCenter2.dll
 DotList
@@ -9722,10 +9645,7 @@ DynamicField
 DynamicFieldDesigner
 DynamicFieldNode_Text
 Dynazip
-
-
-
-E!plChapterWWW
+E!plChapterWWW
 E!plChapterWWWd
 E!plChapterWWW|
 E(HcT$pH
@@ -10269,8 +10189,7 @@ Exec format error
 ExecJRE: new: %s
 ExecJRE: old: %s
 Execute
-ExecuteCompleteW
-ExecuteCompleteW|
+ExecuteCompleteWExecuteCompleteW|
 ExecuteOptionEnumWWW
 ExecuteOptionEnumWWW,
 ExecuteW0
@@ -10352,9 +10271,7 @@ EyeshineEffect
 EyeshineEffect.eyeshine icon.png
 EyeshineEffectPlugin
 EyeshinePlugin
-
-
-F Pj*Wj
+F Pj*Wj
 F PjPWj
 F#"owW"
 F$$$/AdobePlugin/PIPLInfo/PluginName/DifferenceClouds=Difference Clouds
@@ -10445,7 +10362,6 @@ FSpCreate
 FSpDelete
 FSpOpenDF
 FTPjKWj
-
 FULL_ASCII_CODE_39
 FULL_PI
 FWCA_FLOW
@@ -11077,7 +10993,6 @@ FwpmSubLayerDestroyEnumHandle0
 FwpmSubLayerEnum0
 FxPj<Wj
 F|Pj=Wj
-
 G D)`8E
 G D)`8H
 G(H+G H
@@ -11121,7 +11036,6 @@ G:\Paintdotnet\Plugins\zip\Kaleidoscope\obj\Release\Kaleidoscope.pdb
 G:\Paintdotnet\Plugins\zip\ReflectionFlat\obj\Release\ReflectionFlat.pdb
 G:\Paintdotnet\Plugins\zip\Water3fx\obj\Release\Water.pdb
 G:\jason's\PDN\plugins\DiagonalLines\DiagonalLines\EffectsPluginTemplate1\obj\Release\Diagonal Lines.pdb
-
 G@HcOHH
 GAIsProcessorFeaturePresent
 GAverageColor (HSL) Plugin for Paint.NET. (With help from Code Lab v1.3)
@@ -11994,8 +11908,7 @@ H(+K@;K8|
 H(+K@;K8}
 H(+K@;K8}%H
 H+D$0H;
-H+T$hJcD0
-H.edata
+H+T$hJcD0H.edata
 H.pdata
 H/////<
 H323 Filter
@@ -12003,7 +11916,6 @@ H323_DEBUG_LEVEL
 H323_TRACE
 H3E H3E
 H8HcD$0
-
 H9A r:H
 H9L$0w4H
 H9OHtKH9OXtEH9O`t?L;
@@ -12028,10 +11940,8 @@ H9{ u4H
 H9{`t/H
 H:\VS05\Projects\CutoutEffect.cs\CutoutEffect.cs\obj\Release\CutoutEffect.cs.pdb
 H:mm:ss
-
 H;L$Pt0A
 H;] t"H
-
 H<40+%"',--1112
 H=H[HxH
 H?@<400%""&()
@@ -12164,7 +12074,6 @@ HcD$,Hk
 HcD$0H;
 HcD$@H+
 HcD$HH;
-
 HcFrameIndex
 HcInterruptEnable
 HcL$ Hk
@@ -12177,17 +12086,12 @@ HcPortStatusCtrl[4]
 HcPortStatusCtrl[5]
 HcPortStatusCtrl[6]
 HcPortStatusCtrl[7]
-
 HcStatus
 HcT$$Ic
 HcT$,Hk
-
-
 HcY8HcA|Hcy@HcqDH
 Hc\$0A;
 Hc\$0Mc
-
-
 HeaderBox
 HeaderLabel
 HeaderLabelStyle
@@ -12465,7 +12369,6 @@ IDAT8O}
 IDAT8O}R
 IDAT8O}S=K
 IDAT8O}S?H
-
 IDATx^-
 IDATx^M
 IDATx^e
@@ -13335,7 +13238,6 @@ ItemChange
 ItemSpec
 ItemType
 ItemVal
-
 J$$$/Plugins/Lizards/WIAWizard/PIPLInfo/PluginName/WIAWizard=WIA Support...
 J$JqpQPpPPJJJJPppPpPJPPPPPPJPpPPJpVPPJPPVP*PVPPV0PVVVVVVV
 J-JNJnJ
@@ -13924,7 +13826,6 @@ Java_sun_security_smartcardio_PCSC_SCardGetStatusChange
 Java_sun_security_smartcardio_PCSC_SCardListReaders
 Java_sun_security_smartcardio_PCSC_SCardStatus
 Java_sun_security_smartcardio_PCSC_SCardTransmit
-
 JdbcOdbc.dll
 JeMlbc#
 Jens Thuresson
@@ -13935,8 +13836,7 @@ John Stewien 2009
 Jotaf (Jo
 Jphips_selective_enhancer Plugin for Paint.NET. (Compiled by Code Lab v1.3)
 JppDSOWWW
-JppDSOWWW
-JumpToXPEP
+JppDSOWWWJumpToXPEP
 K +C,Hc
 K SUVWATH
 K SUVWH
@@ -14030,7 +13930,6 @@ KuwaharaFilterMod
 L!MoveNext
 L!MoveNext$
 L!MoveNextP
-
 L$ SUVWATAUAVAWH
 L$ SUVWATH
 L$ SUVWH
@@ -14041,23 +13940,18 @@ L$ UATAUAVAWH
 L$ UVWATAUAVAWH
 L$ VPQj
 L$$A+L$
-
-
 L$(Lc\$PD
 L$(Qh<p
 L$*f+L$&f
 L$,}PA;
 L$0I!t$(
 L$0SWPj
-
-
 L$89l$0t"
 L$8;L$D
 L$8RWPVQ
 L$>9u$f
 L$@+L$8A
 L$@9L$H
-
 L$LGLjL
 L$LPQWV
 L$L_^[3
@@ -14078,7 +13972,6 @@ L$x;|$t
 L&*H$_Z
 L0K0K0c0f0D0~0Y0
 L0j0D0_0
-
 L9cXt(A
 L9g8t$H
 L9k`t)H
@@ -14178,10 +14071,8 @@ LayerToRender
 LayersGroupInfo
 LayoutEventArgs
 LayoutKind
-
 LcD$$Hc
 LcD$(ffffff
-
 Lc\$0HcL$4D;
 Lcom/sun/management/VMOption$Origin;
 Lc|$ M;
@@ -14539,7 +14430,6 @@ MSXACTPS.dll
 MThe RouteData must contain an item named '{0}' with a non-empty string value.
 MWtK6Wr3
 MXB8MIB8eman
-
 MacBethColorCheckerChart
 MacPrintInfo
 MacToWinRect
@@ -15344,12 +15234,10 @@ NumericUpDown1_ValueChanged
 NumericUpDownControl
 NumericUpDownControl_ValueChanged
 NvssK+//
-
 O"N1Y@b
 O'~>$#Ko
 O(u-Nn0
 O(uW0f0D0
-
 O0`0U0D0
 O63we1cG&{
 O6e0R6enc
@@ -15828,7 +15716,6 @@ PADPADPk
 PADPADPp
 PADPADPq-j
 PADPADPwf
-
 PAPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXx
 PARAMETERS_PER_FRAME
 PART_SelectionRange
@@ -16012,7 +15899,6 @@ PLAIN_CLOUDS_ENTRY
 PLTE+++UUU
 PLTE000^^^mmmyyy<+
 PLTE444ZZZ\\\bbbiiijjjkkklllmmmnnnoooppprrr}}}68
-
 PLTEoooqqq|||
 PLUGIN.dll
 PLd]>}|}
@@ -16253,7 +16139,6 @@ PaletteToSave
 Palo Alto, CA  94303, U.S.A.  All rights reserved.
 Palo Alto1
 PanControl
-
 Panelling
 Panelling.Properties
 Panelling.Properties.Resources.resources
@@ -16838,7 +16723,6 @@ PxPerInch
 PyG[cZF}Ty
 PyNIBVN
 P~\HDFW
-
 Q&RNRvR
 Q,I;Q,u
 Q,I;R,u
@@ -17169,7 +17053,6 @@ RGB_Remap4EffectPlugin
 RGB_Remap4Plugin
 RGBtoHSV
 RH0~0Y0K0
-
 RIDAT8O
 RIDAT8Oc
 RIDAT8O}S
@@ -17187,11 +17070,9 @@ RPC_SESSION
 RPC_SHUTDOWN
 RPC_STOP_ON_ASSUME
 RPC_USE_LOCALHOST_FOR_BINDACK
-
 RSDS!mu
 RSDS'3vU
 RSDS*WL0ES
-
 RSDS1GU
 RSDS4OA
 RSDS58<
@@ -17200,14 +17081,11 @@ RSDS8a4
 RSDS:rp
 RSDS<Kw
 RSDS<}Z:i
-
 RSDSGq[
 RSDSH3i
 RSDSL"Q"
-
 RSDSY'.
 RSDSYvj
-
 RSDS^`p
 RSDS`dG
 RSDScq)2
@@ -17215,7 +17093,6 @@ RSDSga,X
 RSDSgnd
 RSDSi~U>
 RSDSl7Y
-
 RSDSn1D
 RSDSo2Y
 RSDSqD|
@@ -17604,8 +17481,7 @@ ReExec Args: %s
 ReExec Command: %s (%s)
 ReRegisterForFinalize
 ReachFramework
-Read MethodWWW
-Read failed
+Read MethodWWWRead failed
 Read-only file system
 Read/write failed
 ReadAllText
@@ -17680,8 +17556,7 @@ Recordset21W
 RecordsetEventsVtWWW
 RecordsetEventsVtWWWp
 RecordsetEventsW
-RecordsetEventsW
-RecordsetWWW
+RecordsetEventsWRecordsetWWW
 RecordsetWWWd
 Recover Watermark
 Recover Watermark.dll
@@ -17990,9 +17865,7 @@ RichAs!
 RichGeW
 RichN@5
 RichTextBox
-
 Richcrj
-
 Richx~s
 RightAlignEffect
 RightFile
@@ -18008,8 +17881,7 @@ RndSeed
 Rnd_ValueChanged
 Rollback step failed
 Rollback step successful
-RollbackTransCompleteWWW
-RollbackTransCompleteWWW|
+RollbackTransCompleteWWWRollbackTransCompleteWWW|
 RollbackTransWWW
 Rolled back %s to %s
 Root CA1
@@ -18385,8 +18257,6 @@ SVWATAUAVAWH
 SVWATAUAVH
 SVWATAUH
 SVWATAVAWH
-
-
 SVWjAY3
 SW0~0Y0
 SWATAUAVAWH
@@ -18948,7 +18818,6 @@ ShowScrollBar
 ShowWindow
 Shows the edges in an image.
 Shutdown
-
 SigUpdateControl
 Sigmatel
 Signal %s is raised
@@ -19658,7 +19527,6 @@ T$ RSPQ
 T$ ]_^[
 T$(!\$ H
 T$(fffff
-
 T$D9T$l
 T$D9T$lv
 T$XD+D$T+T$PI
@@ -20447,7 +20315,6 @@ TypeDescriptor
 TypeLibTypeAttribute
 TypeLibVersionAttribute
 Tzach Shabtay
-
 U0Z0g0m0s0y0W1\1i1o1u1~1Z2`2f2l2r2x2~2
 U?SetPermissionsWW
 UATAUAVAWH
@@ -20769,7 +20636,6 @@ Utility
 UuidFromStringW
 UuidToStringW
 Uuv.6c`
-
 V06000600600**00006666VVV00000000Q011Q001W00QW0PVV0PVVPVVPVWVVWVVVVVVVVVWVVVVVVVVVVVWVVVVVVWVVwWwWwwVwPPVPvVVVVVVVVV
 V06QV60Q667PP
 V210 10-bit YUV
@@ -20908,7 +20774,6 @@ VVvPpPPP00VwwQVQVQWWQVwvWvwVQvwVpwQwQwVpqQqpqwqvvvV|v
 VVvVVvV
 VVwVwVWVVPVVPvVVVVVVVV
 VVwv0100QPw
-
 VWATAUAV
 VWATAUAVAW
 VWATAUAVAWH
@@ -20955,7 +20820,6 @@ ValidationException
 ValidationExtensions
 Value / Brightness
 Value cannot be null or empty.BSJB
-
 ValueChanged
 ValueCollection
 ValueConversionAttribute
@@ -21533,7 +21397,6 @@ X'YU0[0
 X(A+\$@E
 X)I)B>==
 X0\0`0d0h0l0p0t0x0|0
-
 XA]A\_^][
 XA^A]A\_^]H
 XA_A^A]A\][I
@@ -21626,7 +21489,6 @@ XplAttrWW
 XplAttrWW$
 X{TPXXX%
 Y effect
-
 Y#UUUUUU
 Y+C?^36
 Y/SetWrappedObject
@@ -21743,7 +21605,6 @@ ZwQueryValueKey
 [NB[(1)]]
 [NB[(1)]][NH[(1)]][RSHNH[RUH(1)]]
 [NB[(1)]][NH[(1)]][RSHNH[RUH(1)]][TB(66,67,73,83,90)[KIH](68)[KDH](70)[KFH](74)[KJH](99)[RSH](101)[RSHRUH](115)[RUH](91)[NH[(0)]](64)[RSHNH[RUH(0)]]()[]]
-
 [Supports
 [W0f0O0`0U0D0
 [[0O0`0U0D0
@@ -21777,8 +21638,7 @@ ZwQueryValueKey
 \$ fD9#
 \$ ffffff
 \$,HcD$(A
-\$,Ict$
-\$,f+\$$f+^"f
+\$,Ict$\$,f+\$$f+^"f
 \$0!|$(
 \$0+\$(UV
 \$0D!d$(
@@ -21786,8 +21646,7 @@ ZwQueryValueKey
 \$0D9\$ u
 \$0Icv`+
 \$0ffffff
-\$49\$4u
-\$8f+L$4fD+\$0
+\$49\$4u\$8f+L$4fD+\$0
 \$@A^A]A\_^
 \$@D9\$P
 \$L+|$@+\$D
@@ -21858,7 +21717,6 @@ ZwQueryValueKey
 \|\|\||
 \||\||\|||
 \|||||\|\|\||||||||||||||||||||||
-
 ];B\|tM
 ]A\A]A^A_
 ]A]A^A_
@@ -21928,9 +21786,7 @@ ZwQueryValueKey
 ^adDelete
 ^adDeleted
 ^oooooo$
-
 ^qRichg
-
 _(uFO/fv^
 _,HcO(H
 _8D9\$0u
@@ -22261,10 +22117,8 @@ _xSaveWW
 `1Xn0OUL
 `1Xn0j0D0
 `1Xo0!q
-
 `@@@@@@@@@`
 `@@@@@@`
-
 `A\_^][
 `A]A\_^]
 `A^A\_^]
@@ -22350,7 +22204,6 @@ aReverseColors
 aStartAngle
 aStartSweep
 aStartSweep_ValueChanged
-
 a_stream
 aaLevel
 aaPoints
@@ -23954,7 +23807,6 @@ convertToDPI
 converter
 convolution
 cookieWW
-
 copySurface
 copyToken
 corner_radius_bottomleft_x
@@ -24269,7 +24121,6 @@ e:\depot\source\DNE\retail\amd64\dnes64x.pdb
 e@A_A^A]A\]
 eFlv!@r
 eHA_A^A]A\_^[]
-
 eIDAT(S
 eIDAT(Se
 eNTJDsA
@@ -24385,11 +24236,9 @@ eztw32.dll
 f/*ooooooom
 f0H;n(t9ff
 f8H;n0t6fff
-
 f9A(t"D
 f9Aht"D
 f9exeMO
-
 f:\dd\vsproject\xmake\Framework\objr\amd64\Microsoft.Build.Framework.pdb
 f:\dd\wpf\src\windows.snk
 f;1uDD:
@@ -24397,16 +24246,12 @@ f;D$@u:
 f;D$Dux
 f;^D}Vfff
 f;}D}Xf
-
-
 fBlankPassword
 fD0f0O0`0U0D0
 fD9#thH
 fD9#u&H
 fD91u:A
-
 fD97t~I;
-
 fD9d$pt
 fD9t$Hu
 fD9|$xu
@@ -24426,7 +24271,6 @@ fD;_D}AA
 fD;d$(E
 fD;d$(H
 fE9 uXM
-
 fHH;N@t
 fIDAT8O
 fMoreDataWWW
@@ -25638,7 +25482,6 @@ get_WindowName
 get_WindowText
 get_WorkingArea
 get_Wrap
-
 get_Year
 get_Yellow
 get_Zoom
@@ -25794,7 +25637,6 @@ greenSlider
 greenUpDown
 greyscale
 greyscale_CheckedChanged
-
 group ( placement: place_row )
 group( placement: place_column, reverse: false, spacing: gLargeSpace, horizontal: align_fill )
 group( placement: place_row, reverse: false, spacing: gLargeSpace, horizontal: align_fill )
@@ -25837,7 +25679,6 @@ gwwwwwwwwwwwwwh
 h"Wofs79
 h$65R?%
 h(D+~HD
-
 h.rdata
 h0D0F0qQ
 h0W0f0x
@@ -25958,8 +25799,7 @@ http://microsoft.com0
 http://ocsp.comodoca.com0
 http://ocsp.usertrust.com0
 http://ocsp.verisign.com0
-http://ocsp.verisign.com0
-http://ocsp.verisign.com01
+http://ocsp.verisign.com0http://ocsp.verisign.com01
 http://ocsp.verisign.com0;
 http://ocsp.verisign.com0>
 http://ocsp.verisign.com0?
@@ -26052,7 +25892,6 @@ iWidthExt
 iWidthInt
 iWidthMid
 iWidthU
-
 iceland
 icelandic
 icentreX
@@ -26265,7 +26104,6 @@ italian
 italian-swiss
 itemIndex
 iweightnorm
-
 j2pcsc.dll
 jHh1YWe
 jHhlQ(u
@@ -26357,7 +26195,6 @@ k"333?Z
 k"fff?Z
 k"fff?Zi(
 k"fff?Zs+
-
 k0J0D0f0f
 k0L9k(tDD9k8A
 k0d0D0f08l
@@ -26371,7 +26208,6 @@ kScaleAtBranch
 kThe route provided already exists in the route collection. The collection may not contain duplicate routes.
 kWidthBranch
 kXfA98tPH
-
 k[X[l(A
 k\Omi&N_U
 kb_lens
@@ -26406,10 +26242,8 @@ l$ VWAUAVAWH
 l$ VWAUH
 l$ VWAVH
 l$ WATAUH
-
 l$0!t$(D
 l$0I;l$
-
 l$@A_A^A]A\
 l$@L9+t
 l$@L9y t
@@ -26417,13 +26251,10 @@ l$@fD9+u
 l$HA_A^A]A\_^
 l$`Hc+H
 l$`L9+tuA
-l$`Mcl$
-l$h9\$ H
-
+l$`Mcl$l$h9\$ H
 l$pffff
 l$x|,Hc
 l-DkDlPAeEqxr~g>
-
 l61#55Uf
 lBrightness
 lCommandTypeW
@@ -26433,8 +26264,7 @@ lSystem.Resources.ResourceReader, mscorlib, Version=2.0.0.0, Culture=neutral, Pu
 lValue=%s;hr=%x
 lX#ffffff
 lZ#ffffff
-lZX#333333)@[
-lZX#ffffff
+lZX#333333)@[lZX#ffffff
 lZY#U0*
 label10
 label11
@@ -26446,7 +26276,6 @@ label1_Click
 label2_LinkClicked
 label3_Click
 label5_Click
-
 labelAlpha
 labelAmplitude
 labelBlue
@@ -26906,7 +26735,6 @@ n***jI@
 n0H;n(t3H
 n6~UNt^
 n<L,&~>
-
 nAmount1
 nAmount1_ValueChanged
 nAmount2
@@ -26948,7 +26776,6 @@ nMinorNum
 nNK~~aC
 nOptions is %ld
 nPixType
-
 nameNnhCTXETchannel name
 namespace ModelEffect
 namespaceT
@@ -27247,8 +27074,7 @@ on_process_enter
 on_process_exit
 on_thread_enter
 on_thread_exit
-ooooooo\
-oooooooo**ooooooV
+ooooooo\oooooooo**ooooooV
 oooxzzB
 opDesaturate
 opErrorWW
@@ -27340,7 +27166,6 @@ p WATAUH
 p""""$l
 p""""(F
 p""""(tl
-
 p#****************************#p!hooooooooooooooooooooooooooooh!*oooooooooooooooooooooooooooooo**oooooooooooooooooooooooooooooo**oooooooo]3Dooooooooooa7
 p006WVWvv0100PPPwppPvvwpPP00000pPpv00QPPp
 p00Q06PvPQQpPP06VpPP00000p
@@ -27365,8 +27190,7 @@ pCallbacks->u32Version=%#x PDM_DEVREG_CB_VERSION=%#x
 pClassID
 pCompare
 pCompare\
-pConnectionW
-pConnectionW|
+pConnectionWpConnectionW|
 pCtx->m_fKeepSendingPings
 pCtx->m_fPingMsgIsOut
 pCtx->m_pSteamCon
@@ -27392,8 +27216,7 @@ pPVWVVvwvPPQ00P0v
 pQPPPQPvqPWVVQ00PpVPQ00P0p
 pQPpvwww
 pQvvPPw
-pRecordsetWW
-pRecordsetWW|
+pRecordsetWWpRecordsetWW|
 pRetStringWW
 pRetStringWW\
 pRetValW
@@ -27610,8 +27433,7 @@ ppObjectd
 ppRowPos
 ppRowPosX
 ppSessionWWW
-ppSessionWWW
-ppdispWrapperWWWL
+ppSessionWWWppdispWrapperWWWL
 ppiRsetW
 ppiRsetW$
 ppiprmWW0
@@ -28139,7 +27961,6 @@ right_of_diagr
 right_tangent
 rleCompress
 rmi.dll
-
 rotation
 rotationAngle
 routeData
@@ -28298,7 +28119,6 @@ segment_size = 0x%x = %d
 selFrameInx
 sel_height
 sel_width
-
 selbounds
 selectApp
 selectedChart
@@ -29200,7 +29020,6 @@ strokeLifetimeReset
 strokeLifetimeReset_Click
 strpbrk
 strrchr
-
 strtoul
 structureChangeType
 subMenuName
@@ -29278,12 +29097,9 @@ system_class is not 0 or 1
 szConvertedMsg
 szProduct
 -,)+O,S
-
 t!fffff
 t"@u =u
 t#;=P@@
-
-
 t$ ATAUAVH
 t$ Hct$8A
 t$ WATAU3
@@ -29300,14 +29116,12 @@ t$8A]A\_
 t$8Hct$PH
 t$<;t$Du
 t$@;t$D
-
 t$Pf9l$Pt&H
 t$fD9+u
 t$xHcS(H
 t&H9\$0t
 t)H9_ u<
 t)fffff
-
 t+D9c`vAH
 t+H!|$ A
 t+WWVPV
@@ -29441,7 +29255,6 @@ tb_RadAdj_Scroll
 tb_SelPce
 tb_SelPce_Scroll
 tbbmalloc.dll
-
 tclass_name == NULL
 tclass_sig is not a valid class signature
 tcolour
@@ -29812,7 +29625,6 @@ troundX
 troundY
 true_sel_height
 true_sel_width
-
 tsender
 tt_Scroll
 ttailleBord
@@ -29864,20 +29676,14 @@ typeCnt
 typeCode
 typeCodeToUse
 typeName
-
 t|HcK 3
 t}H9s(tbA
-
-
-
-
-u!!\$@H
+u!!\$@H
 u!f9t$PH
 u$D9d$`u
 u%L;E@t
 u*9:HIJXYZghijvwxyz
 u*9Q<|%
-
 u/9\$0s)H
 u0D8=Jo
 u0D8=Zo
@@ -29896,7 +29702,6 @@ uIDATHK
 uL9\$8w
 uM8A)uB
 uProgress
-
 uRichCg
 uS9l$4tMH
 uT9t$@uN
@@ -29947,7 +29752,6 @@ udsplatsize_ValueChanged
 ui9T$ptcH
 uiAccess="false"
 uiCulture
-
 ul9T$ptfH
 um~^)]d
 unable to create socket
@@ -30055,7 +29859,6 @@ v0WVPVWPVQ0VppP16V6PVVV7Vp
 v1PQPPPq
 v2.0.50727
 v>WillExecuteW
-
 v@[Xi}<
 vChoice
 vFormattedValueWW
@@ -30198,7 +30001,6 @@ vstoee100tlb.pdb
 vstoee90tlb.pdb
 vswprintf
 vswprintf_s
-
 vuMRck(W
 vvP0VQP
 vvPPPPVvvvvv
@@ -30252,7 +30054,6 @@ vwvwvPJ*JPvvPVPvpPVP000*00060000**0P0PPPPPvvV0VvvvVPPJPPPPP0P00001*11+11111K1111
 vwvwwvVVP60000666600PVV0PQQqWqWqVwvWvVwvvVvvvVvvWvVvVvVvVv
 vwvwwwvvvv
 v{CcCgg
-
 v|vvvwvvv
 v|vv|v|vWvVP0VVVVV6w
 v~&=sKK=z{
@@ -30453,7 +30254,6 @@ wmDirFiles
 wmDirInfo
 wmpenc.pdb
 wmpnssui.pdb
-
 wooomI<w
 workWaiting
 workingDirectory
@@ -30530,10 +30330,7 @@ x ATAUAVH
 x ATAUAWH
 x ATAVAWH
 x AVHcA
-
-
 x,http://schemas.microsoft.com/winfx/2006/xaml
-
 x64Methods
 x78\$8t1L
 x86Methods
@@ -30547,7 +30344,6 @@ xCenterOffset
 xDeleteWW
 xDeleteWW\
 xEmptyRect
-
 xFd9GXs
 xHorizontalDistance
 xImportEntry
@@ -30578,10 +30374,8 @@ xmario_cut_color_enPlugin
 xw9|$ uo
 xxpnp_DD_B///B'
 xy;sP}tH
-
 y,,@@@WWWpJJcccuuu
-y:WillConnectW
-y:WillConnectW|
+y:WillConnectWy:WillConnectW|
 yCenterOffset
 yHorizontalDistance
 yICellset@
@@ -30606,9 +30400,6 @@ ypbstrDataMemberW
 ypbstrDataMemberW\
 ypyrochild.effects.common.Gradient, pyrochild.effects.common, Version=2.0.3023.36652, Culture=neutral, PublicKeyToken=nullPADPA
 ypyrochild.effects.common.Gradient, pyrochild.effects.common, Version=2.0.3106.38959, Culture=neutral, PublicKeyToken=nullPADPA
-
-
-
 z:\itt\branch_tbb21\tbb\1.0\build\fxeqwin02icc10_1_021_64_vc9_release\tbbmalloc.pdb
 zGetPermissionsWW
 zIDAT(S
@@ -30651,12 +30442,10 @@ zu-r)U}>
 {There is an incomplete parameter in this path segment: '{0}'. Check that each '{{' character has a matching '}}' character.
 {pFStatus
 | <C~(<DtG<Ft?<It
-
 |$ $u-f
 |$ ATAUAVAW3
 |$ ATAUAVAWE
 |$ ATAUAVH
-
 |$ UATAUAVAWH
 |$"$u%f
 |$$|%A;
@@ -30685,8 +30474,6 @@ zu-r)U}>
 |$Piavsu
 |$PspmCu!E3
 |$PxubH
-
-
 |$`D!\$hL
 |$l9L$p
 |$pu/Hc
@@ -30758,7 +30545,6 @@ zu-r)U}>
 }K~{W~~S~|T
 }Pfffffff
 }XL9}Pt
-
 }adResyncConflictsWWW
 }adResyncConflictsWWWT
 }adRightReadPermissionsWW
@@ -30767,7 +30553,6 @@ zu-r)U}>
 }{z]SON
 }||||||
 }~_XzW_uQ
-
 ~&A;\$8
 ~=HcD$pL
 ~DequeEnumerator`1
