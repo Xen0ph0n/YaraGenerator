@@ -164,6 +164,10 @@ def main():
   print "  [+] Rule Description: " + options.Description 
   if options.Tags:
     print "  [+] Rule Tags: " + options.Tags 
+  print "\n[+] Rule Below:\n"
+  with open(options.RuleName + ".yar", 'r') as donerule:
+    print donerule.read()
+
   print "\n[+] YaraGenerator (C) 2013 Chris@xenosec.org https://github.com/Xen0ph0n/YaraGenerator"
 
 
