@@ -135,6 +135,7 @@ def main():
   opt.add_argument("-a", "--Author", default="Anonymous", help="Enter Author Name")
   opt.add_argument("-d", "--Description",default="No Description Provided",help="Provide a useful description of the Yara Rule")
   opt.add_argument("-t", "--Tags",default="",help="Apply Tags to Yara Rule For Easy Reference (AlphaNumeric)")
+  opt.add_argument("-v", "--Verbose",default=False,action="store_true", help= "Print Finished Rule To Standard Out")
   if len(sys.argv)<=2:
     opt.print_help()
     sys.exit(1)
@@ -163,10 +164,11 @@ def main():
   print "  [+] Author Credited: " + options.Author
   print "  [+] Rule Description: " + options.Description 
   if options.Tags:
-    print "  [+] Rule Tags: " + options.Tags 
-  print "\n[+] Rule Below:\n"
-  with open(options.RuleName + ".yar", 'r') as donerule:
-    print donerule.read()
+    print "  [+] Rule Tags: " + options.Tags +"\n"
+  if options.Verbose:
+    print "[+] Rule Below:\n"
+    with open(options.RuleName + ".yar", 'r') as donerule:
+      print donerule.read()
 
   print "[+] YaraGenerator (C) 2013 Chris@xenosec.org https://github.com/Xen0ph0n/YaraGenerator"
 
