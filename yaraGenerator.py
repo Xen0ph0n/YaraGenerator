@@ -21,7 +21,6 @@ with open('modules/blacklist.txt') as f:
 
 with open('modules/regexblacklist.txt') as f:
   regblacklist = f.read().splitlines()
-print regblacklist
 
 def getStrings(filename):
   try:
