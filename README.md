@@ -16,7 +16,7 @@ The theory behind the tool is as follows:
 
 
 ## Version and Updates
-0.5 - Added Regexes in modules/regexblacklist.txt which will remove matches from potential strings included in yara rules *(Don't forget ^ and $ to match full strings vs pieces* also added 30K strings to blacklist. Lowered hit requirment from 100 to 95% to allow more true positives from slight variants (example change of embeded C2 or UA)
+0.5 - Added Regexes in modules/regexblacklist.txt which will remove matches from potential strings included in yara rules also added 30K strings to blacklist. Lowered hit requirment from 100 to 95% to allow more true positives from slight variants (example change of embeded C2 or UA)
 
 0.4 - Added PEfile (http://code.google.com/p/pefile/) to extract and remove imports and functions from yara rules, added blacklist.txt to remove unwanted strings
 
