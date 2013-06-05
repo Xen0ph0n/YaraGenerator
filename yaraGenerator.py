@@ -168,7 +168,7 @@ def main():
   with open(options.RuleName + ".yar", 'r') as donerule:
     print donerule.read()
 
-  print "\n[+] YaraGenerator (C) 2013 Chris@xenosec.org https://github.com/Xen0ph0n/YaraGenerator"
+  print "[+] YaraGenerator (C) 2013 Chris@xenosec.org https://github.com/Xen0ph0n/YaraGenerator"
 
 
 if __name__ == "__main__":	
