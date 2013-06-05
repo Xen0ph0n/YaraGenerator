@@ -21,6 +21,7 @@ with open('modules/blacklist.txt') as f:
 
 with open('modules/regexblacklist.txt') as f:
   regblacklist = f.read().splitlines()
+print regblacklist
 
 def getStrings(filename):
   try:
@@ -33,18 +34,6 @@ def getStrings(filename):
     unicode_str = re.compile( ur'(?:[\x20-\x7E][\x00]){6,100}',re.UNICODE ) 
     unicodelist = unicode_str.findall(data) 
     allstrings = unicodelist + strlist
-    #Match Against Blacklist
-    for black in blacklist:
-      if black in allstrings: allstrings.remove(black)
-    #Match Against Regex Blacklist
-    regmatchlist = []
-    for regblack in regblacklist:
-      for string in allstrings:
-        regex = re.compile(regblack) 
-        if regex.match(string): regmatchlist.append(string)
-    if len(regmatchlist) > 0:
-      for match in regmatchlist:
-        allstrings.remove(match)
     # use pefile to extract names of imports and function calls and remove them from string list
     if len(allstrings) > 0:
       try:
@@ -87,6 +76,18 @@ def findCommonStrings(fileDict):
   			sNum +=1
   	if sNum == matchNumber:
   		finalStringList.append(s)
+  #Match Against Blacklist
+  for black in blacklist:
+    if black in finalStringList: finalStringList.remove(black)
+  #Match Against Regex Blacklist
+  regmatchlist = []
+  for regblack in regblacklist:
+    for string in finalStringList:
+      regex = re.compile(regblack) 
+      if regex.search(string): regmatchlist.append(string)
+  if len(regmatchlist) > 0:
+    for match in list(set(regmatchlist)):
+      finalStringList.remove(match)
 
   return finalStringList
 
@@ -122,7 +123,7 @@ def buildYara(options, strings, hashes):
     else:  
       ruleOutFile.write("\t$string"+str(randStrings.index(s))+" = \""+ s.replace("\\","\\\\") +"\"\n")
   ruleOutFile.write("condition:\n")
-  ruleOutFile.write("\tall of them\n")
+  ruleOutFile.write("\t"+str(len(randStrings) - 1)+" of them\n")
   ruleOutFile.write("}\n")
   ruleOutFile.close()
   return
