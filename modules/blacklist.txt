@@ -1,5 +1,72 @@
+%&'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz
+&'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz
+(7mYD+Es
+)f)+1S
+*<")QH
+*<")QH
+-<"l9t
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+GGHPXNT,
+GGHPXNT,
+Generic RGB Profile
+ICC_PROFILE
+K(M&$R(.1
+LStf+]
+LStf+]
+Microsoft Macintosh Word
+Microsoft Word 97-2004 Document
+Normal.dotm
+Ssd+r]
+Ssd+r]
+Uczt`u
+Um$u>4k
+Word.Document.8
+[Content_Types].xml
+[Content_Types].xml 
+[Content_Types].xmlPK
+[Content_Types].xmlPK
+_rels/.rels
+_rels/.rels 
+_rels/.relsPK
+_rels/.relsPK
+docProps/app.xml 
+docProps/app.xmlPK
+docProps/core.xml 
+docProps/core.xmlPK
+docProps/thumbnail.jpeg
+mntrRGB XYZ 
+sHImTrr5
+tN'ahY
+theme/theme/_rels/themeManager.xml.rels
+theme/theme/_rels/themeManager.xml.relsPK
+theme/theme/theme1.xml
+theme/theme/theme1.xmlPK
+theme/theme/themeManager.xml
+theme/theme/themeManager.xmlPK
+word/_rels/document.xml.rels 
+word/_rels/document.xml.relsPK
+word/document.xml
+word/document.xmlPK
+word/fontTable.xml
+word/fontTable.xmlPK
+word/settings.xml
+word/settings.xmlPK
+word/styles.xml
+word/styles.xmlPK
+word/stylesWithEffects.xml
+word/stylesWithEffects.xmlPK
+word/theme/theme1.xml
+word/theme/theme1.xmlPK
+word/webSettings.xml
+word/webSettings.xmlPK
+x#@dm0
+x#@dmxR
+x#@dyp
+x#@dyp
 This program cannot be run in DOS mode.
 @.rdata
+@.data
+.rdata
 @.relocnew HsvColor(hsc.Hue, hsc.Saturation, ts).ToColor());
 new HsvColor(hsc.Hue, ts, hsc.Value).ToColor());
 new HsvColor(ts, hsc.Saturation, hsc.Value).ToColor());
