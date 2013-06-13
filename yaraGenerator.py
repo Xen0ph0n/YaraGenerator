@@ -151,6 +151,9 @@ def main():
   	 fhash = md5sum(workingdir + f)
   	 fileDict[fhash] = getStrings(workingdir + f)
   	 hashList.append(fhash)
+  if len(fileDict) == 0:
+    print "[!] No Files Present in \"" + options.InputDirectory +"\"" 
+    sys.exit(1) 
   
   #Isolate strings present in all files
   finalStringList = findCommonStrings(fileDict)
