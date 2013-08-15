@@ -1,21 +1,11 @@
 ## Information
-This is a simple tool to try to allow for quick, simple, and effective yara rule creation to isolate malware families. This is an experiment and thus far I've had pretty good success with it. It is a work in progress and I welcome forks and feedback!
+This is a project to build a tool to attempt to allow for quick, simple, and effective yara rule creation to isolate malware families and other malicious objects of interest. This is an experiment and thus far I've had pretty good success with it. It is a work in progress and I welcome forks and feedback!
 
-To utilize this you must find a few files from a malware family you wish to profile, (the more the better, three to four samples seems to be effective). Place the samples in their own directory, and run the tool. Thats it! Yara Magic! Please note however that this tool will only be as precise as you are in choosing what you are looking for...
-
-The theory behind the tool is as follows:
-
-
-   As opposed to intensive analytical examination of a cadre of malware to determine similarities, by extracting all present strings and ensuring only to signature for those present in all desired samples and requiring ENOUGH of them to be present to equal a match, similar results can be achieved.
-
-   In many ways this is less flexible than the existing methodology, but in some ways more so, as it relies less on anomalous indicators which can easily be changed. That said it needs a lot of work and tuning, because the risk is run of capturing strings only present in your sample set, but not the family at large. Lowering the critical hit from 100% of strings may approach a usable compromise there.
-
-   I've integrated PEfile (http://code.google.com/p/pefile/) so when exes are part of the cadre of samples, their imports and functions will be removed from the lists of strings, also created a blacklist so you can exclude strings such as (!This program... etc) from inclusion in rules..
-
-   I've lowered the string count to 20 from 30 to reflect these changes, of course the final number may be lower due to number of common strings, and random selection. 
-
+To utilize this you must find a few files from a malware family, or if not executables then containing the attribute of interest, you wish to profile, (the more the better, three to four samples seems to be effective for malware, however to isolate exploits in carrier documents it often takes many more). Please note however that this tool will only be as precise as you are in choosing what you are looking for... visit Yaragenerator.com for a webapplication version of this tool. 
 
 ## Version and Updates
+0.6 - Refactored all of the code to allow for selectable filetype of samples (-f). This allows for entirely different signature generation for PDFs vs EXEs vs EMails. In addition to dispirate execution paths, each filetype has it's own string blacklist and regexlist to exclude unwanted things such as your gateway, usernames, @yourco.com etc. (Note: No custom per file code exists for anything beyond executables at this point, but the framework is now there)
+
 0.5 - Added Regexes in modules/regexblacklist.txt which will remove matches from potential strings included in yara rules also added 30K strings to blacklist. Lowered hit requirment from 100 to 95% to allow more true positives from slight variants (example change of embeded C2 or UA)
 
 0.4 - Added PEfile (http://code.google.com/p/pefile/) to extract and remove imports and functions from yara rules, added blacklist.txt to remove unwanted strings
@@ -39,7 +29,7 @@ You should have received a copy of the GNU General Public License along with Yar
 
 Usage is as follows with an example of a basic search +  hitting all of
 the switches below:
-<pre>
+```
 
 usage: yaraGenerator.py [-h] -r RULENAME [-a AUTHOR] [-d DESCRIPTION] [-t TAGS] InputDirectory
 
@@ -49,13 +39,15 @@ positional arguments:
   InputDirectory        Path To Files To Create Yara Rule From
 
 optional arguments:
-  -h, --help            show this help message and exit
-  -r RULENAME         Enter A Rule/Alert Name (No Spaces + Must Start with Letter)
-  -a AUTHOR           Enter Author Name
-  -d DESCRIPTION      Provide a useful description of the Yara Rule
-  -t TAGS             Apply Tags to Yara Rule For Easy Reference (AlphaNumeric)
-  -v Verbose          Print Finished Rule To Standard Out
-</pre>
+  -h , --help             show this help message and exit
+  -r , --RuleName         Enter A Rule/Alert Name (No Spaces + Must Start with Letter)
+  -a , --Author           Enter Author Name
+  -d , --Description      Provide a useful description of the Yara Rule
+  -t , --Tags             Apply Tags to Yara Rule For Easy Reference (AlphaNumeric)
+  -v , --Verbose          Print Finished Rule To Standard Out
+  -f , --FileType         Select Sample Set FileType choices are: unknown, exe,
+                          pdf, email, office, js-html
+```
 
 The blacklist.txt file in the /modules directory allows entry of one string per line, these strings will never appear in a rule generated by YaraGenerator.
 
@@ -63,8 +55,8 @@ The regexblacklist.txt in the /modules directory allows entry of one Regular Exp
 
 Example for a Specific Family of APT1 Malware:
 
-<pre>
-python yaraGenerator.py ../greencat/ -r Win_Trojan_APT1_GreenCat -a "Chris Clark" -d "APT Trojan Comment Panda" -t "APT"
+```
+python yaraGenerator.py ../greencat/ -r Win_Trojan_APT1_GreenCat -a "Chris Clark" -d "APT Trojan Comment Panda" -t "APT" -f "exe"
 
 [+] Generating Yara Rule Win_Trojan_APT1_GreenCat from files located in: ../greencat/
 
@@ -76,9 +68,9 @@ python yaraGenerator.py ../greencat/ -r Win_Trojan_APT1_GreenCat -a "Chris Clark
   [+] Rule Tags: APT
 
 [+] YaraGenerator (C) 2013 Chris@xenosec.org https://github.com/Xen0ph0n/YaraGenerator
-</pre>
+```
 Resulting Yara Rules:
-<pre>
+```
 rule Win_Trojan_APT_APT1_Greencat : APT
 {
 meta:
@@ -88,6 +80,7 @@ meta:
   hash0 = "57e79f7df13c0cb01910d0c688fcd296"
   hash1 = "871cc547feb9dbec0285321068e392b8"
   hash2 = "6570163cd34454b3d1476c134d44b9d9"
+  sample_filetype = "exe"
   yaragenerator = "https://github.com/Xen0ph0n/YaraGenerator"
 strings:
   $string0 = "Ramdisk"
@@ -112,13 +105,12 @@ condition:
 }
 
 
-</pre>
-
+```
 ## Results
 
 GreenCat Rule:
 
-<pre>
+```
 100% Hits on Test Samples:
 
 $ yara -rg Trojan_Win_GreenCat.yar greencat/
@@ -141,7 +133,7 @@ Win_Trojan_APT1_GreenCat [APT] ../../MalwareSamples/APT1Malware//f76dd93b10fc173
 
 $ yara -r Trojan_Win_GreenCat.yar ../../CleanFiles/
 
-</pre>
+```
 
 
 
