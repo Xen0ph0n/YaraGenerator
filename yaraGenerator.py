@@ -7,21 +7,55 @@
 import re, sys, os, argparse, hashlib, random
 from datetime import datetime
 
+#Ensure Import path is in syspath
 pathname = os.path.abspath(os.path.dirname(sys.argv[0]))
 sys.path.append(pathname + '/modules')
 
+
+#Make sure requred imports are present
 try:
   import pefile
 except:
   print "[!] PEfile not installed or present in ./modules directory"
   sys.exit(1) 
 
-with open('modules/blacklist.txt') as f:
-  blacklist = f.read().splitlines()
+def getFiles(workingdir):
+  global hashList
+  fileDict = {}
+  hashList = [] 
+  #get hashes
+  for f in os.listdir(workingdir):
+    if os.path.isfile(workingdir + f) and not f.startswith("."):
+     fhash = md5sum(workingdir + f)
+     fileDict[fhash] = workingdir + f
+     hashList.append(fhash)
+  if len(fileDict) == 0:
+    print "[!] No Files Present in \"" + workingdir +"\"" 
+    sys.exit(1) 
+  else: 
+    return fileDict
 
-with open('modules/regexblacklist.txt') as f:
-  regblacklist = f.read().splitlines()
 
+#Use PEfile for executables and remove import/api calls from sigs
+def exeImportsFuncs(filename, allstrings):
+    try:
+        pe = pefile.PE(filename)
+        importlist = []
+        for entry in pe.DIRECTORY_ENTRY_IMPORT: 
+          importlist.append(entry.dll)
+          for imp in entry.imports:
+            importlist.append(imp.name)
+        for imp in importlist:
+          if imp in allstrings: allstrings.remove(imp)
+        if len(allstrings) > 0:
+          return list(set(allstrings))
+        else:
+          print '[!] No Extractable Attributes Present in Hash: '+str(md5sum(filename)) + 'Please Remove it from the Sample Set and Try Again!'
+          sys.exit(1) 
+    except:  
+        return allstrings
+
+#Simple String / ASCII Wide string extraction 
 def getStrings(filename):
   try:
     data = open(filename,'rb').read()
@@ -35,23 +69,12 @@ def getStrings(filename):
     allstrings = unicodelist + strlist
     # use pefile to extract names of imports and function calls and remove them from string list
     if len(allstrings) > 0:
-      try:
-        pe = pefile.PE(filename)
-        importlist = []
-        for entry in pe.DIRECTORY_ENTRY_IMPORT: 
-          importlist.append(entry.dll)
-          for imp in entry.imports:
-            importlist.append(imp.name)
-        for imp in importlist:
-          if imp in allstrings: allstrings.remove(imp)
-        return list(set(allstrings))
-      except:  
         return list(set(allstrings))
     else:
-      print '[!] No Extractable Attributes Present in: '+ filename + "\n[!] Please Remove it from the Sample Set and Try Again"
+      print '[!] No Extractable Attributes Present in Hash: '+str(md5sum(filename)) + 'Please Remove it from the Sample Set and Try Again!'
       sys.exit(1) 
   except Exception:
-    print '[!] No Extractable Attributes Present in: '+ filename + "\n[!] Please Remove it from the Sample Set and Try Again"
+    print '[!] No Extractable Attributes Present in Hash: '+str(md5sum(filename)) + 'Please Remove it from the Sample Set and Try Again!'
     sys.exit(1)
 
 def md5sum(filename):
@@ -64,7 +87,9 @@ def md5sum(filename):
       m.update(data)
   return m.hexdigest() 
 
-def findCommonStrings(fileDict):
+
+#find common strings and check against filetype specific blacklists
+def findCommonStrings(fileDict, filetype):
   baseStringList = random.choice(fileDict.values())
   finalStringList = []
   matchNumber = len(fileDict)
@@ -75,6 +100,13 @@ def findCommonStrings(fileDict):
   			sNum +=1
   	if sNum == matchNumber:
   		finalStringList.append(s)
+
+  #import and use filetype specific blacklist/regexlist to exclude unwanted sig material
+  #Various utility functions to extract strings/data/info and isolate signature material
+  with open('modules/'+filetype+'_blacklist.txt') as f:
+    blacklist = f.read().splitlines()
+  with open('modules/'+filetype+'_regexblacklist.txt') as f:
+    regblacklist = f.read().splitlines()
   #Match Against Blacklist
   for black in blacklist:
     if black in finalStringList: finalStringList.remove(black)
@@ -90,6 +122,7 @@ def findCommonStrings(fileDict):
 
   return finalStringList
 
+#Build the actual rule
 def buildYara(options, strings, hashes):
   date = datetime.now().strftime("%Y-%m-%d")
   randStrings = []
@@ -114,6 +147,7 @@ def buildYara(options, strings, hashes):
   ruleOutFile.write("\tdescription = \""+ options.Description + "\"\n")
   for h in hashes:
   	ruleOutFile.write("\thash"+str(hashes.index(h))+" = \""+ h + "\"\n")
+  ruleOutFile.write("\tsample_filetype = \""+ options.FileType + "\"\n")
   ruleOutFile.write("\tyaragenerator = \"https://github.com/Xen0ph0n/YaraGenerator\"\n")
   ruleOutFile.write("strings:\n")
   for s in randStrings:
@@ -127,7 +161,47 @@ def buildYara(options, strings, hashes):
   ruleOutFile.close()
   return
 
+#Per filetype execution paths
+def unknownFile(fileDict):
+  #Unknown is the default and will mirror executable excepting the blacklist
+  for fhash, path in fileDict.iteritems():
+    fileDict[fhash] = getStrings(path)
+  finalStringList = findCommonStrings(fileDict, 'unknown')
+  return finalStringList
+
+def exeFile(fileDict):
+  for fhash, path in fileDict.iteritems():
+    fileDict[fhash] = exeImportsFuncs(path, getStrings(path))
+  finalStringList = findCommonStrings(fileDict, 'exe')
+  return finalStringList
+
+def pdfFile(fileDict):
+  for fhash, path in fileDict.iteritems():
+    fileDict[fhash] = getStrings(path)
+  finalStringList = findCommonStrings(fileDict, 'pdf')
+  return finalStringList
+
+def emailFile(fileDict):
+  for fhash, path in fileDict.iteritems():
+    fileDict[fhash] = getStrings(path)
+  finalStringList = findCommonStrings(fileDict, 'email')
+  return finalStringList
+
+def officeFile(fileDict):
+  for fhash, path in fileDict.iteritems():
+    fileDict[fhash] = getStrings(path)
+  finalStringList = findCommonStrings(fileDict, 'office')
+  return finalStringList
+
+def jshtmlFile(fileDict):
+  for fhash, path in fileDict.iteritems():
+    fileDict[fhash] = getStrings(path)
+  finalStringList = findCommonStrings(fileDict, 'jshtml')
+  return finalStringList
+
+#Main
 def main():
+  filetypeoptions = ['unknown','exe','pdf','email','office','js-html']
   opt = argparse.ArgumentParser(description="YaraGenerator")
   opt.add_argument("InputDirectory", help="Path To Files To Create Yara Rule From")
   opt.add_argument("-r", "--RuleName", required=True , help="Enter A Rule/Alert Name (No Spaces + Must Start with Letter)")
@@ -135,31 +209,35 @@ def main():
   opt.add_argument("-d", "--Description",default="No Description Provided",help="Provide a useful description of the Yara Rule")
   opt.add_argument("-t", "--Tags",default="",help="Apply Tags to Yara Rule For Easy Reference (AlphaNumeric)")
   opt.add_argument("-v", "--Verbose",default=False,action="store_true", help= "Print Finished Rule To Standard Out")
-  if len(sys.argv)<=2:
+  opt.add_argument("-f", "--FileType", required=True, default='unknown',choices=filetypeoptions, help= "Select Sample Set FileType choices are: "+', '.join(filetypeoptions), metavar="")
+  if len(sys.argv)<=3:
     opt.print_help()
     sys.exit(1)
   options = opt.parse_args()
   if " " in options.RuleName or not options.RuleName[0].isalpha():
   	print "[!] Rule Name Can Not Contain Spaces or Begin With A Non Alpha Character"
-  workingdir = options.InputDirectory
-  fileDict = {}
-  hashList = []
-  print "\n[+] Generating Yara Rule " + options.RuleName + " from files located in: " + options.InputDirectory 
-  #get hashes and strings 
-  for f in os.listdir(workingdir):
-    if os.path.isfile(workingdir + f) and not f.startswith("."):
-  	 fhash = md5sum(workingdir + f)
-  	 fileDict[fhash] = getStrings(workingdir + f)
-  	 hashList.append(fhash)
-  if len(fileDict) == 0:
-    print "[!] No Files Present in \"" + options.InputDirectory +"\"" 
-    sys.exit(1) 
-  
-  #Isolate strings present in all files
-  finalStringList = findCommonStrings(fileDict)
 
+
+  #Get Filenames and hashes
+  fileDict = getFiles(options.InputDirectory)
+  print "\n[+] Generating Yara Rule " + options.RuleName + " from files located in: " + options.InputDirectory
+  
+  #Begin per-filetype processing paths
+  if options.FileType == 'exe':
+    finalStringList = exeFile(fileDict)
+  elif options.FileType == 'pdf':
+    finalStringList = pdfFile(fileDict)
+  elif options.FileType == 'email':
+    finalStringList = emailFile(fileDict)
+  elif options.FileType == 'office':
+    finalStringList = officeFile(fileDict)
+  elif options.FileType == 'js-html':
+    finalStringList = jshtmlFile(fileDict)
+  else:
+    finalStringList = unknownFile(fileDict)
 
   #Build and Write Yara Rule
+  global hashList
   buildYara(options, finalStringList, hashList)
   print "\n[+] Yara Rule Generated: "+options.RuleName+".yar\n"
   print "  [+] Files Examined: " + str(hashList)
