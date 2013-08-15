@@ -103,9 +103,9 @@ def findCommonStrings(fileDict, filetype):
 
   #import and use filetype specific blacklist/regexlist to exclude unwanted sig material
   #Various utility functions to extract strings/data/info and isolate signature material
-  with open('modules/'+filetype+'_blacklist.txt') as f:
+  with open(pathname +'modules/'+filetype+'_blacklist.txt') as f:
     blacklist = f.read().splitlines()
-  with open('modules/'+filetype+'_regexblacklist.txt') as f:
+  with open(pathname +'modules/'+filetype+'_regexblacklist.txt') as f:
     regblacklist = f.read().splitlines()
   #Match Against Blacklist
   for black in blacklist:
