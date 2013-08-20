@@ -231,7 +231,10 @@ def buildYara(options, strings, hashes):
     else:  
       ruleOutFile.write("\t$string"+str(randStrings.index(s))+" = \""+ s.replace("\\","\\\\") +"\"\n")
   ruleOutFile.write("condition:\n")
-  ruleOutFile.write("\t"+str(len(randStrings) - 1)+" of them\n")
+  if options.FileType == 'email':
+    ruleOutFile.write("\t any of them\n")
+  else:
+    ruleOutFile.write("\t"+str(len(randStrings) - 1)+" of them\n")
   ruleOutFile.write("}\n")
   ruleOutFile.close()
   return
