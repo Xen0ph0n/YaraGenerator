@@ -67,7 +67,7 @@ def emailParse(filename):
         strlist = pattern.findall(text)
         return strlist
 
-      uselesskeys = ['DKIM-Signature', 'X-SENDER-REPUTATION', 'References', 'Received','Message-ID', 'MIME-Version','In-Reply-To', 'Date', 'Content-Type', 'X-Original-To']
+      uselesskeys = ['DKIM-Signature', 'X-SENDER-REPUTATION', 'References', 'To', 'Delivered-To', 'Received','Message-ID', 'MIME-Version','In-Reply-To', 'Date', 'Content-Type', 'X-Original-To']
       emailfile = open(filename, 'r')
       msg = email.message_from_file(emailfile)
       emaildict = dict(msg.items())
