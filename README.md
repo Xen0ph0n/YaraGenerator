@@ -4,6 +4,8 @@ This is a project to build a tool to attempt to allow for quick, simple, and eff
 To utilize this you must find a few files from a malware family, or if not executables then containing the attribute of interest, you wish to profile, (the more the better, three to four samples seems to be effective for malware, however to isolate exploits in carrier documents it often takes many more). Please note however that this tool will only be as precise as you are in choosing what you are looking for... visit http://yaragenerator.com for a webapplication version of this tool. 
 
 ## Version and Updates
+0.6.1 - Added logic for parsing and prioritizing strings/emails/headers from emails (must submit in .eml file in order for python library to parse it properly). Added per filetype string prioritization logic (IE include all email addresses and IP's common across emails before random words from email bodys). Need to develop a good blacklist for body strings to highlight more interesting ones. 
+
 0.6 - Refactored all of the code to allow for selectable filetype of samples (-f). This allows for entirely different signature generation for PDFs vs EXEs vs EMails. In addition to dispirate execution paths, each filetype has it's own string blacklist and regexlist to exclude unwanted things such as your gateway, usernames, @yourco.com etc. (Note: No custom per file code exists for anything beyond executables at this point, but the framework is now there)
 
 0.5 - Added Regexes in modules/regexblacklist.txt which will remove matches from potential strings included in yara rules also added 30K strings to blacklist. Lowered hit requirment from 100 to 95% to allow more true positives from slight variants (example change of embeded C2 or UA)
