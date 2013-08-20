@@ -82,13 +82,13 @@ def emailParse(filename):
         part_ct = str(part.get_content_type())
         if "plain" in part_ct:
           bodyplain = part.get_payload(decode=True)
-          emaildict['Body-Plaintxt'] = list(set(emailStrings(bodyplain)))
+    #      emaildict['Body-Plaintxt'] = list(set(emailStrings(bodyplain)))
           textlinks = linkSearch(bodyplain)  
           if textlinks:
             emaildict['Body-Links'] = textlinks
         if "html" in part_ct:
           bodyhtml = part.get_payload(decode=True)
-          emaildict['Body-HTML'] = list(set(emailStrings(bodyhtml))) 
+   #       emaildict['Body-HTML'] = list(set(emailStrings(bodyhtml))) 
           htmllinks = linkSearch(bodyhtml) 
           if htmllinks:                 
            emaildict['Body-Links'] = htmllinks
