@@ -4,7 +4,7 @@
 # Copyright 2013 Chris Clark chris@xenosec.org
 # Released under GPL3 Licence
 
-import re, sys, os, argparse, hashlib, random
+import re, sys, os, argparse, hashlib, random, email
 from datetime import datetime
 
 #Ensure Import path is in syspath
@@ -50,12 +50,64 @@ def exeImportsFuncs(filename, allstrings):
         if len(allstrings) > 0:
           return list(set(allstrings))
         else:
-          print '[!] No Extractable Attributes Present in Hash: '+str(md5sum(filename)) + 'Please Remove it from the Sample Set and Try Again!'
+          print '[!] No Extractable Attributes Present in Hash: '+str(md5sum(filename)) + ' Please Remove it from the Sample Set and Try Again!'
           sys.exit(1) 
     except:  
         return allstrings
 
-#Simple String / ASCII Wide string extraction 
+
+#EML File parsing, and comparision based on dictionary entries .... plus regexes looking for domains/links in text/html
+def emailParse(filename):
+    try:
+      def emailStrings(text):
+        #same as normal string extract except for " " so each word will be isolated, and nuking <>,. to excude HTML tags and punctuation
+        chars = r"A-Za-z0-9/\-:_$%@'()\\\{\};\]\["
+        regexp = '[%s]{%d,100}' % (chars, 6)
+        pattern = re.compile(regexp)
+        strlist = pattern.findall(text)
+        return strlist
+
+      uselesskeys = ['DKIM-Signature', 'X-SENDER-REPUTATION', 'References', 'Received','Message-ID', 'MIME-Version','In-Reply-To', 'Date', 'Content-Type', 'X-Original-To']
+      emailfile = open(filename, 'r')
+      msg = email.message_from_file(emailfile)
+      emaildict = dict(msg.items())
+      for uselesskey in uselesskeys:
+        if uselesskey in emaildict:
+          del emaildict[uselesskey]
+      emaillist = []
+      for part in msg.walk():
+        part_ct = str(part.get_content_type())
+        if "plain" in part_ct:
+          bodyplain = part.get_payload(decode=True)
+          emaildict['Body-Plaintxt'] = list(set(emailStrings(bodyplain)))
+          textlinks = linkSearch(bodyplain)  
+          if textlinks:
+            emaildict['Body-Links'] = textlinks
+        if "html" in part_ct:
+          bodyhtml = part.get_payload(decode=True)
+          emaildict['Body-HTML'] = list(set(emailStrings(bodyhtml))) 
+          htmllinks = linkSearch(bodyhtml) 
+          if htmllinks:                 
+           emaildict['Body-Links'] = htmllinks
+        if "application" in part_ct:
+          if part.get_filename():       
+            emaildict['attachmentName'] = part.get_filename()
+      for key, value in emaildict.iteritems():
+          if isinstance(value, list):
+            for subval in value:
+              emaillist.append(subval)
+          else:
+            emaillist.append(value)
+      return emaillist 
+    except Exception:
+        print '[!] This File is not an EML File: '+str(md5sum(filename)) + ' Please Remove it from the Sample Set or Select Proper FileType!'
+        sys.exit(1) 
+
+def linkSearch(attachment):
+                urls = list(set(re.compile('(?:ftp|hxxp)[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', re.I).findall(attachment)))
+                return urls
+
+#Simple String / ASCII Wide and URL string extraction 
 def getStrings(filename):
   try:
     data = open(filename,'rb').read()
@@ -67,14 +119,19 @@ def getStrings(filename):
     unicode_str = re.compile( ur'(?:[\x20-\x7E][\x00]){6,100}',re.UNICODE ) 
     unicodelist = unicode_str.findall(data) 
     allstrings = unicodelist + strlist
+    #Extract URLs if present
+    exeurls = linkSearch(data)
+    if exeurls:
+      for url in exeurls:
+        allstrings.append(url)
     # use pefile to extract names of imports and function calls and remove them from string list
     if len(allstrings) > 0:
         return list(set(allstrings))
     else:
-      print '[!] No Extractable Attributes Present in Hash: '+str(md5sum(filename)) + 'Please Remove it from the Sample Set and Try Again!'
+      print '[!] No Extractable Attributes Present in Hash: '+str(md5sum(filename)) + ' Please Remove it from the Sample Set and Try Again!'
       sys.exit(1) 
   except Exception:
-    print '[!] No Extractable Attributes Present in Hash: '+str(md5sum(filename)) + 'Please Remove it from the Sample Set and Try Again!'
+    print '[!] No Extractable Attributes Present in Hash: '+str(md5sum(filename)) + ' Please Remove it from the Sample Set and Try Again!'
     sys.exit(1)
 
 def md5sum(filename):
@@ -126,6 +183,7 @@ def findCommonStrings(fileDict, filetype):
 def buildYara(options, strings, hashes):
   date = datetime.now().strftime("%Y-%m-%d")
   randStrings = []
+  #Ensure we have shared attributes and select twenty
   try:
     for i in range(1,20):
   	 randStrings.append(random.choice(strings))
@@ -133,6 +191,20 @@ def buildYara(options, strings, hashes):
     print '[!] No Common Attributes Found For All Samples, Please Be More Selective'
     sys.exit(1)
 
+  #Prioritize based on specific filetype
+  if options.FileType == 'email':
+    for string in strings:
+      if "@" in string:
+        randStrings.append(string)
+      if "." in string:
+        randStrings.append(string)
+
+  if options.FileType == 'exe':
+    for string in strings:
+      if "." in string:
+        randStrings.append(string)
+
+  #Remove Duplicates
   randStrings = list(set(randStrings))
 
   ruleOutFile = open(options.RuleName + ".yar", "w")
@@ -183,7 +255,7 @@ def pdfFile(fileDict):
 
 def emailFile(fileDict):
   for fhash, path in fileDict.iteritems():
-    fileDict[fhash] = getStrings(path)
+    fileDict[fhash] = emailParse(path)
   finalStringList = findCommonStrings(fileDict, 'email')
   return finalStringList
 
