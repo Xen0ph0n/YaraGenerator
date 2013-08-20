@@ -71,6 +71,9 @@ def emailParse(filename):
       emailfile = open(filename, 'r')
       msg = email.message_from_file(emailfile)
       emaildict = dict(msg.items())
+      if len(emaildict) == 0:
+        print '[!] This File is not an EML File: '+str(md5sum(filename)) + ' Please Remove it from the Sample Set or Select Proper FileType!'
+        sys.exit(1) 
       for uselesskey in uselesskeys:
         if uselesskey in emaildict:
           del emaildict[uselesskey]
