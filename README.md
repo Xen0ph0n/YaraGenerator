@@ -32,7 +32,7 @@ Usage is as follows with an example of a basic search +  hitting all of
 the switches below:
 ```
 
-usage: yaraGenerator.py [-h] -r RULENAME [-a AUTHOR] [-d DESCRIPTION] [-t TAGS] -f FILETYPE InputDirectory 
+usage: yaraGenerator.py [-h] -r RULENAME -f FILETYPE [-a AUTHOR] [-d DESCRIPTION] [-t TAGS] InputDirectory 
 
 YaraGenerator
 
