@@ -1,9 +1,9 @@
-## Information
+### Information
 This is a project to build a tool to attempt to allow for quick, simple, and effective yara rule creation to isolate malware families and other malicious objects of interest. This is an experiment and thus far I've had pretty good success with it. It is a work in progress and I welcome forks and feedback!
 
 To utilize this you must find a few files from a malware family, or if not executables then containing the attribute of interest, you wish to profile, (the more the better, three to four samples seems to be effective for malware, however to isolate exploits in carrier documents it often takes many more). Please note however that this tool will only be as precise as you are in choosing what you are looking for... visit http://yaragenerator.com for a webapplication version of this tool. 
 
-## Version and Updates
+### Version and Updates
 0.6.1 - Added logic for parsing and prioritizing strings/emails/headers from emails (must submit in .eml file in order for python library to parse it properly). Added per filetype string prioritization logic (IE include all email addresses and IP's common across emails before random words from email bodys). Due to targeted parsing, effective signatures can be built from a single email. Also boolean logic for email rules is "all of them" to allow for future variance in delivery methods.
 
 0.6 - Refactored all of the code to allow for selectable filetype of samples (-f). This allows for entirely different signature generation for PDFs vs EXEs vs EMails. In addition to dispirate execution paths, each filetype has it's own string blacklist and regexlist to exclude unwanted things such as your gateway, usernames, @yourco.com etc. (Note: No custom per file code exists for anything beyond executables at this point, but the framework is now there)
@@ -18,7 +18,7 @@ To utilize this you must find a few files from a malware family, or if not execu
 
 0.1 - Released, supports regular string extraction
 
-## ToDo
+### ToDo
 [+] Allow for scanning of benign/baseline files to automatically populate blacklists for various filetypes
 
 [+] Create custom execution paths leveraging opensource tools for various filetypes (IE email/pdf/office docs ..etc)
@@ -26,7 +26,7 @@ To utilize this you must find a few files from a malware family, or if not execu
 [+] Continue to improve fidelity and flexibility of algos and underlying methodologies to generate signatures
 
 
-## Example
+### Example
 
 Usage is as follows with an example of a basic search +  hitting all of
 the switches below:
@@ -107,7 +107,7 @@ condition:
 
 
 ```
-## Results
+### Results
 
 GreenCat Rule:
 
@@ -136,7 +136,7 @@ $ yara -r Trojan_Win_GreenCat.yar ../../CleanFiles/
 
 ```
 
-## Author & License
+### Author & License
 
 YaraGenerator is copyrighted by Chris Clark 2013. Contact me at Chris@xenosys.org
 
