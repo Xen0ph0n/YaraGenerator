@@ -202,11 +202,6 @@ def buildYara(options, strings, hashes):
       if "." in string:
         randStrings.append(string)
 
-  if options.FileType == 'exe':
-    for string in strings:
-      if "." in string:
-        randStrings.append(string)
-
   #Remove Duplicates
   randStrings = list(set(randStrings))
 
